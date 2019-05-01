@@ -15,3 +15,43 @@ a {
   text-decoration: none;
   font-weight: 600;
 }
+
+
+/***** * Hero *****/
+.hero {
+  background: url('../images/wallpaper3.jpg');
+  height: 920px;
+  background-size: cover;
+  background-position: center;
+}
+
+.heroGroup {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 150px 50px;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  color: white;
+  font-size: 60px;
+  line-height: 1.2;
+}
+
+.hero p {
+  color: rgba(255, 255, 255, .8);
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+.hero a {
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, .7);
+  padding: 9px 20px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+}
