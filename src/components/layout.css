@@ -23,6 +23,7 @@ a {
   height: 920px;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
 .heroGroup {
@@ -101,4 +102,10 @@ a {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.hero svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
