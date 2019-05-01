@@ -21,10 +21,18 @@ const IndexPage = () => (
 
         <Link to="/page-2/">Watch the video</Link>
 
+        <div className="logos">
+          <img src={require("../images/logo-sketch.png")} width="50" alt=""/>
+          <img src={require("../images/logo-figma.png")} width="50" alt=""/>
+          <img src={require("../images/logo-studio.png")} width="50" alt=""/>
+          <img src={require("../images/logo-framer.png")} width="50" alt=""/>
+          <img src={require("../images/logo-react.png")} width="50" alt=""/>
+          <img src={require("../images/logo-swift.png")} width="50" alt=""/>
+        </div>
+
         <svg
           width="100%"
           height="172"
-          viewBox="0 0 100% 172"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
