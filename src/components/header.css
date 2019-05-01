@@ -33,7 +33,7 @@
   border-radius: 10px;
   outline: none;
   cursor: pointer;
-  transition: 1s;
+  transition: 1s cubic-bezier(0.2, 0.82, 0.2, 1);
 }
 
 .header button:hover {
