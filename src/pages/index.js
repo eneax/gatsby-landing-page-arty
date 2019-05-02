@@ -2,8 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Card from "../components/card"
 
 const IndexPage = () => (
   <Layout>
@@ -15,8 +15,7 @@ const IndexPage = () => (
           Learn to <br /> design and code React apps
         </h1>
         <p>
-          Complete courses about the best tools and design systems. Prototype
-          and build apps with React and Swift.
+          Complete courses about the best tools and design systems.
         </p>
 
         <Link to="/page-2/">Watch the video</Link>
@@ -47,6 +46,15 @@ const IndexPage = () => (
           </path>
         </svg>
       </div>
+    </div>
+
+    <div className="cards">
+      <h2>11 courses, more coming</h2>
+      <Card 
+        title="React for Designers"
+        text="12 sections"
+        image={require("./../images/wallpaper.jpg")}
+      />
     </div>
   </Layout>
 )
