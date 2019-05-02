@@ -14,19 +14,17 @@ const IndexPage = () => (
         <h1>
           Learn to <br /> design and code React apps
         </h1>
-        <p>
-          Complete courses about the best tools and design systems.
-        </p>
+        <p>Complete courses about the best tools and design systems.</p>
 
         <Link to="/page-2/">Watch the video</Link>
 
         <div className="logos">
-          <img src={require("../images/logo-sketch.png")} width="50" alt=""/>
-          <img src={require("../images/logo-figma.png")} width="50" alt=""/>
-          <img src={require("../images/logo-studio.png")} width="50" alt=""/>
-          <img src={require("../images/logo-framer.png")} width="50" alt=""/>
-          <img src={require("../images/logo-react.png")} width="50" alt=""/>
-          <img src={require("../images/logo-swift.png")} width="50" alt=""/>
+          <img src={require("../images/logo-sketch.png")} width="50" alt="" />
+          <img src={require("../images/logo-figma.png")} width="50" alt="" />
+          <img src={require("../images/logo-studio.png")} width="50" alt="" />
+          <img src={require("../images/logo-framer.png")} width="50" alt="" />
+          <img src={require("../images/logo-react.png")} width="50" alt="" />
+          <img src={require("../images/logo-swift.png")} width="50" alt="" />
         </div>
 
         <svg
@@ -50,11 +48,28 @@ const IndexPage = () => (
 
     <div className="cards">
       <h2>11 courses, more coming</h2>
-      <Card 
-        title="React for Designers"
-        text="12 sections"
-        image={require("./../images/wallpaper.jpg")}
-      />
+      <div className="cardGroup">
+        <Card
+          title="Design System"
+          text="10 sections"
+          image={require("./../images/wallpaper.jpg")}
+        />
+        <Card
+          title="React for Designers"
+          text="12 sections"
+          image={require("./../images/wallpaper2.jpg")}
+        />
+        <Card
+          title="Sound Design"
+          text="5 sections"
+          image={require("./../images/wallpaper3.jpg")}
+        />
+        <Card
+          title="ARKit 2"
+          text="10 sections"
+          image={require("./../images/wallpaper4.jpg")}
+        />
+      </div>
     </div>
   </Layout>
 )
