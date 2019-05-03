@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Card from "../components/card"
+import Section from "../components/section"
 
 const IndexPage = () => (
   <Layout>
@@ -71,6 +72,14 @@ const IndexPage = () => (
         />
       </div>
     </div>
+
+    <Section 
+      image={require("../images/wallpaper2.jpg")}
+      logo={require("../images/logo-react.png")}
+      title="React for Designers"
+      text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, minus quo officiis veniam fugit a ullam aliquam facilis minima? Eum quas, repellendus quos quidem id odio temporibus alias error recusandae."
+      
+    />
   </Layout>
 )
 
