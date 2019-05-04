@@ -63,7 +63,7 @@ const Footer = ({ data, children }) => (
 
     <LinkGroup>
       {data.allContentfulLink.edges.map(edge => (
-        <a href={edge.node.url}>{edge.node.title}</a>
+        <a key={edge.node.url} href={edge.node.url}>{edge.node.title}</a>
       ))}
     </LinkGroup>
     
