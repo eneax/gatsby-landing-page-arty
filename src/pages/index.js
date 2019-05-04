@@ -1,11 +1,36 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from 'styled-components'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Card from "../components/card"
 import Section from "../components/section"
 import Wave from "../components/wave"
+import staticData from "../../staticdata.json"
+import Cell from "../components/cell";
+
+const SectionCaption = styled.p`
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #94a4ba;
+  text-align: center;
+`
+
+const SectionCellGroup = styled.div`
+  max-width: 800px;
+  margin: 0 auto 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  padding: 0 20px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`
+
 
 const IndexPage = () => (
   <Layout>
@@ -64,8 +89,17 @@ const IndexPage = () => (
       logo={require("../images/logo-react.png")}
       title="React for Designers"
       text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, minus quo officiis veniam fugit a ullam aliquam facilis minima? Eum quas, repellendus quos quidem id odio temporibus alias error recusandae."
-      
     />
+
+    <SectionCaption>12 sections - 6 hours</SectionCaption>
+    <SectionCellGroup>
+      {staticData.cells.map((cell) => (
+        <Cell
+          title={cell.title}
+          image={cell.image}
+        />
+      ))}
+    </SectionCellGroup>
   </Layout>
 )
 
