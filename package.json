@@ -12,6 +12,7 @@
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.35",
+    "gatsby-plugin-stripe": "^1.2.0",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-contentful": "^2.0.55",
     "gatsby-source-filesystem": "^2.0.33",
@@ -20,6 +21,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
+    "react-stripe-checkout": "^2.6.3",
+    "stripe": "^6.31.2",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
