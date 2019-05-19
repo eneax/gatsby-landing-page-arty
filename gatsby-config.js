@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Design Code`,
-    description: `Design Code website built with Gatsby`,
+    title: `Gatsby Landing Page`,
+    description: `Landing Page built with Gatsby, CSS Grid and styled-components`,
     author: `@eneax`,
   },
   plugins: [
@@ -22,8 +22,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `gatsby-landing-page`,
+        short_name: `landing`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
