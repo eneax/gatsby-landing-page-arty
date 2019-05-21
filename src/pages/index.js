@@ -59,8 +59,58 @@ const IndexPage = () => (
     </div>
 
     <div className="cards">
-      <h2>11 courses, more coming</h2>
+      <h2>20 courses, more coming</h2>
       <div className="cardGroup">
+        <Card
+          title="Learn iOS 11 Design"
+          text="11 sections"
+          image={require("./../images/wallpaper.jpg")}
+        />
+        <Card
+          title="Learn Sketch"
+          text="21 sections"
+          image={require("./../images/wallpaper.jpg")}
+        />
+        <Card
+          title="Learn Swift"
+          text="19 sections"
+          image={require("./../images/wallpaper.jpg")}
+        />
+        <Card
+          title="Swift Advanced"
+          text="22 sections"
+          image={require("./../images/wallpaper.jpg")}
+        />
+        <Card
+          title="Create a SpriteKit Game"
+          text="9 sections"
+          image={require("./../images/wallpaper.jpg")}
+        />
+        <Card
+          title="Create a Sketch Plugin"
+          text="7 sections"
+          image={require("./../images/wallpaper.jpg")}
+        />
+        <Card
+          title="Motion Design in After Effects"
+          text="8 sections"
+          image={require("./../images/wallpaper.jpg")}
+        />
+        <Card
+          title="ARKit 2"
+          text="11 sections"
+          image={require("./../images/wallpaper4.jpg")}
+        />
+        <Card
+          title="Video Editing in ScreenFlow"
+          text="4 sections"
+          image={require("./../images/wallpaper4.jpg")}
+        />
+        <Card
+          title="Sound Design with Cubase"
+          text="5 sections"
+          image={require("./../images/wallpaper3.jpg")}
+        />
         <Card
           title="Design System"
           text="10 sections"
@@ -72,14 +122,44 @@ const IndexPage = () => (
           image={require("./../images/wallpaper2.jpg")}
         />
         <Card
-          title="Sound Design"
-          text="5 sections"
-          image={require("./../images/wallpaper3.jpg")}
+          title="Design System in Figma"
+          text="10 sections"
+          image={require("./../images/wallpaper2.jpg")}
         />
         <Card
-          title="ARKit 2"
+          title="Design and Code in Framer X"
           text="10 sections"
-          image={require("./../images/wallpaper4.jpg")}
+          image={require("./../images/wallpaper2.jpg")}
+        />
+        <Card
+          title="Animating in Principle"
+          text="5 sections"
+          image={require("./../images/wallpaper2.jpg")}
+        />
+        <Card
+          title="Create a Javascript Game"
+          text="6 sections"
+          image={require("./../images/wallpaper2.jpg")}
+        />
+        <Card
+          title="Vue for Designers"
+          text="11 sections"
+          image={require("./../images/wallpaper2.jpg")}
+        />
+        <Card
+          title="React Native for Designers"
+          text="12 sections"
+          image={require("./../images/wallpaper2.jpg")}
+        />
+        <Card
+          title="Unity for Designers"
+          text="15 sections"
+          image={require("./../images/wallpaper2.jpg")}
+        />
+        <Card
+          title="React Native for Designers Part 2"
+          text="12 sections"
+          image={require("./../images/wallpaper2.jpg")}
         />
       </div>
     </div>
