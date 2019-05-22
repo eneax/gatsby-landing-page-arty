@@ -59,107 +59,102 @@ const IndexPage = () => (
     </div>
 
     <div className="cards">
-      <h2>20 courses, more coming</h2>
+      <h2>19 courses, more coming</h2>
       <div className="cardGroup">
         <Card
           title="Learn iOS 11 Design"
           text="11 sections"
-          image={require("./../images/wallpaper.jpg")}
+          image={require("./../images/ios-design.jpeg")}
         />
         <Card
           title="Learn Sketch"
           text="21 sections"
-          image={require("./../images/wallpaper.jpg")}
+          image={require("./../images/sketch.jpeg")}
         />
         <Card
           title="Learn Swift"
           text="19 sections"
-          image={require("./../images/wallpaper.jpg")}
+          image={require("./../images/swift.jpeg")}
         />
         <Card
           title="Swift Advanced"
           text="22 sections"
-          image={require("./../images/wallpaper.jpg")}
+          image={require("./../images/swift-advanced.jpeg")}
         />
         <Card
           title="Create a SpriteKit Game"
           text="9 sections"
-          image={require("./../images/wallpaper.jpg")}
+          image={require("./../images/spritekit.jpeg")}
         />
         <Card
           title="Create a Sketch Plugin"
           text="7 sections"
-          image={require("./../images/wallpaper.jpg")}
+          image={require("./../images/sketch-plugin.jpeg")}
         />
         <Card
           title="Motion Design in After Effects"
           text="8 sections"
-          image={require("./../images/wallpaper.jpg")}
+          image={require("./../images/motion-ae.jpeg")}
         />
         <Card
           title="ARKit 2"
           text="11 sections"
-          image={require("./../images/wallpaper4.jpg")}
+          image={require("./../images/arkit.jpeg")}
         />
         <Card
           title="Video Editing in ScreenFlow"
           text="4 sections"
-          image={require("./../images/wallpaper4.jpg")}
+          image={require("./../images/screenflow.jpeg")}
         />
         <Card
           title="Sound Design with Cubase"
           text="5 sections"
-          image={require("./../images/wallpaper3.jpg")}
-        />
-        <Card
-          title="Design System"
-          text="10 sections"
-          image={require("./../images/wallpaper.jpg")}
+          image={require("./../images/cubase.jpeg")}
         />
         <Card
           title="React for Designers"
           text="12 sections"
-          image={require("./../images/wallpaper2.jpg")}
+          image={require("./../images/react.jpeg")}
         />
         <Card
           title="Design System in Figma"
           text="10 sections"
-          image={require("./../images/wallpaper2.jpg")}
+          image={require("./../images/figma-design.jpeg")}
         />
         <Card
           title="Design and Code in Framer X"
           text="10 sections"
-          image={require("./../images/wallpaper2.jpg")}
+          image={require("./../images/framer-design.jpeg")}
         />
         <Card
           title="Animating in Principle"
           text="5 sections"
-          image={require("./../images/wallpaper2.jpg")}
+          image={require("./../images/principle.jpeg")}
         />
         <Card
           title="Create a Javascript Game"
           text="6 sections"
-          image={require("./../images/wallpaper2.jpg")}
+          image={require("./../images/js-game.jpeg")}
         />
         <Card
           title="Vue for Designers"
           text="11 sections"
-          image={require("./../images/wallpaper2.jpg")}
+          image={require("./../images/vue.jpeg")}
         />
         <Card
           title="React Native for Designers"
           text="12 sections"
-          image={require("./../images/wallpaper2.jpg")}
+          image={require("./../images/react-native.jpeg")}
         />
         <Card
           title="Unity for Designers"
           text="15 sections"
-          image={require("./../images/wallpaper2.jpg")}
+          image={require("./../images/unity.jpeg")}
         />
         <Card
           title="React Native for Designers Part 2"
           text="12 sections"
-          image={require("./../images/wallpaper2.jpg")}
+          image={require("./../images/react-native-two.jpeg")}
         />
       </div>
     </div>
