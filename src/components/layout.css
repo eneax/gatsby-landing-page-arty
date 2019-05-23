@@ -135,7 +135,9 @@ a {
 }
 
 .cardGroup {
-  margin: 50px 40px 100px;
+  max-width: 1060px;
+  margin-right: auto;
+  margin-left: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 40px;
