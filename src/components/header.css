@@ -1,32 +1,19 @@
-.header {
+/* .header {
   position: fixed;
   width: 100%;
   padding: 50px 0;
   z-index: 100;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
+} */
 
-.headerScrolled {
+/* .headerScrolled {
   background: rgba(0, 0, 0, 0.8);
   padding: 15px 0;
   backdrop-filter: blur(20px);
-}
+} */
 
-.headerGroup {
-  max-width: 800px;
-  margin: 0 auto;
-  display: grid;  /* by default everything is display column */
-  grid-template-columns: repeat(5, auto); 
-  /* 
-    take max-width and divide by 5, while using an auto:
-    grid-template-columns: auto auto auto auto auto; 
-  */
 
-  align-items: center;  /* vertically */
-  justify-items: center;  /* horizontally */
-}
-
-.header a {
+/* .header a {
   color: white;
   padding: 8px 20px;
   font-weight: 700;
@@ -42,9 +29,9 @@
   color: black;
   box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
   transform: translateY(-3px);
-}
+} */
 
-.header button {
+/* .header button {
   padding: 8px 20px;
   font-size: 20px;
   background: #56ccf2;
@@ -60,9 +47,9 @@
   background: white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
   transform: translateY(-3px);
-}
+} */
 
-@media (max-width: 640px) {
+/* @media (max-width: 640px) {
   .header {
     padding: 15px 0;
   }
@@ -74,4 +61,4 @@
   .header a:nth-child(4) {
     display: none;
   }
-}
+} */

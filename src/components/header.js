@@ -2,6 +2,93 @@ import { Link } from "gatsby"
 import React from "react"
 import "./header.css"
 import StripeCheckout from 'react-stripe-checkout'
+import styled from 'styled-components'
+
+
+const HeaderWrapper = styled.header`
+  position: fixed;
+  width: 100%;
+  padding: 50px 0;
+  z-index: 100;
+  transition: .8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  ${({ hasScrolled }) => hasScrolled && `
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    backdrop-filter: blur(20px);
+  `}
+  
+
+  @media (max-width: 640px) {
+    padding: 15px 0;
+  }
+
+  /* Inner links */
+  a {
+    color: white;
+    padding: 8px 20px;
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: 1s cubic-bezier(0.2, 0.82, 0.2, 1);
+
+    @media (max-width: 640px) {
+      a:nth-child(4) {
+        display: none;
+      }
+    }
+
+    /* Hover effect */
+    &:not(:first-child):hover {
+      background: white;
+      color: black;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
+      transform: translateY(-3px);
+    }
+  }
+
+  /* Inner btn */
+  button {
+    padding: 8px 20px;
+    font-size: 20px;
+    background: #56ccf2;
+    border: none;
+    font-weight: 700;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: 1s cubic-bezier(0.2, 0.82, 0.2, 1);
+
+    /* Hover effect */
+    &:hover {
+      background: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
+      transform: translateY(-3px);
+    }
+  }
+`
+
+const HeaderGroup = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;  /* by default everything is display column */
+  grid-template-columns: repeat(5, auto); 
+  /* 
+    take max-width and divide by 5, while using the 'auto' value
+    grid-template-columns: auto auto auto auto auto; 
+  */
+
+  align-items: center;  /* vertically */
+  justify-items: center;  /* horizontally */
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(4, auto);
+  }
+`
+
 
 class Header extends React.Component {
   state = {
@@ -41,12 +128,8 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div
-        className={
-          this.state.hasScrolled ? "header headerScrolled" : "header"
-        }
-      >
-        <div className="headerGroup">
+      <HeaderWrapper hasScrolled={this.state.hasScrolled}>
+        <HeaderGroup>
           <Link to="/">
             <img
               src={require("../images/logo-designcode.svg")}
@@ -66,8 +149,8 @@ class Header extends React.Component {
           >
             <button>Buy</button>
           </StripeCheckout>
-        </div>
-      </div>
+        </HeaderGroup>
+      </HeaderWrapper>
     )
   }
 }
