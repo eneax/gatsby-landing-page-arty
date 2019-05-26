@@ -1,6 +1,5 @@
 import { Link } from "gatsby"
 import React from "react"
-import "./header.css"
 import StripeCheckout from 'react-stripe-checkout'
 import styled from 'styled-components'
 
