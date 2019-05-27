@@ -31,6 +31,24 @@ const SectionCellGroup = styled.div`
   }
 `
 
+const CardGroup = styled.div`
+  max-width: 1060px;
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  justify-items: center;
+
+  @media (max-width: 1060px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`
+
 
 const IndexPage = () => (
   <Layout>
@@ -60,7 +78,7 @@ const IndexPage = () => (
 
     <div className="cards">
       <h2>19 courses, more coming</h2>
-      <div className="cardGroup">
+      <CardGroup>
         <Card
           title="Learn iOS 11 Design"
           text="11 sections"
@@ -156,7 +174,7 @@ const IndexPage = () => (
           text="12 sections"
           image={require("./../images/react-native-two.jpeg")}
         />
-      </div>
+      </CardGroup>
     </div>
 
     <Section 
