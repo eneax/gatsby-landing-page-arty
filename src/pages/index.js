@@ -31,6 +31,18 @@ const SectionCellGroup = styled.div`
   }
 `
 
+const Cards = styled.div`
+  h2 {
+    margin: 50px 20px;
+    font-size: 60px;
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(104deg, #050a27 0%, #4a548c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+`
+
 const CardGroup = styled.div`
   max-width: 1060px;
   margin-right: auto;
@@ -76,7 +88,7 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <div className="cards">
+    <Cards>
       <h2>19 courses, more coming</h2>
       <CardGroup>
         <Card
@@ -175,7 +187,7 @@ const IndexPage = () => (
           image={require("./../images/react-native-two.jpeg")}
         />
       </CardGroup>
-    </div>
+    </Cards>
 
     <Section 
       image={require("../images/wallpaper2.jpg")}
