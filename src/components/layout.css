@@ -26,12 +26,6 @@ a {
   position: relative;
 }
 
-.heroGroup {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 150px 50px;
-  text-align: center;
-}
 
 .hero h1 {
   margin: 0;
@@ -79,11 +73,7 @@ a {
   color: black;
 }
 
-@media (max-width: 640px) {
-  .heroGroup {
-    padding: 100px 20px;
-  }
-
+@media (max-width: 640px) {  
   .hero h1 {
     font-size: 40px;
   }

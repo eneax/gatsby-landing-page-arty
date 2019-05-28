@@ -10,6 +10,18 @@ import Wave from "../components/wave"
 import staticData from "../../staticdata.json"
 import Cell from "../components/cell";
 
+
+const HeroGroup = styled.div`
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 150px 50px;
+  text-align: center;
+
+  @media (max-width: 640px) {
+    padding: 100px 20px;
+  }
+`
+
 const SectionCaption = styled.p`
   font-weight: 600;
   font-size: 18px;
@@ -78,7 +90,7 @@ const IndexPage = () => (
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
     <div className="hero">
-      <div className="heroGroup">
+      <HeroGroup>
         <h1>
           Learn to <br /> design and code React apps
         </h1>
@@ -96,7 +108,7 @@ const IndexPage = () => (
         </Logos>
 
         <Wave />
-      </div>
+      </HeroGroup>
     </div>
 
     <Cards>
