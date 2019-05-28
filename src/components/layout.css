@@ -109,17 +109,3 @@ a {
   bottom: 0;
   left: 0;
 }
-
-.hero .logos {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);  /* 1 fraction --> we want all boxes equally divided */
-  grid-gap: 40px;
-  margin: 100px 0;
-  justify-items: center;
-}
-
-@media (max-width: 640px) {
-  .hero .logos {
-    grid-template-columns: repeat(3, 1fr);  /* row of 3 logos per line */
-  }
-}

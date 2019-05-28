@@ -61,6 +61,17 @@ const CardGroup = styled.div`
   }
 `
 
+const Logos = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);  /* 1 fraction --> we want all boxes equally divided */
+  grid-gap: 40px;
+  margin: 100px 0;
+  justify-items: center;
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);  /* row of 3 logos per line */
+  }
+`
 
 const IndexPage = () => (
   <Layout>
@@ -75,14 +86,14 @@ const IndexPage = () => (
 
         <Link to="/page-2/">Watch the video</Link>
 
-        <div className="logos">
+        <Logos>
           <img src={require("../images/logo-sketch.png")} width="50" alt="" />
           <img src={require("../images/logo-figma.png")} width="50" alt="" />
           <img src={require("../images/logo-studio.png")} width="50" alt="" />
           <img src={require("../images/logo-framer.png")} width="50" alt="" />
           <img src={require("../images/logo-react.png")} width="50" alt="" />
           <img src={require("../images/logo-swift.png")} width="50" alt="" />
-        </div>
+        </Logos>
 
         <Wave />
       </div>
