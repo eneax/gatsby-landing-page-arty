@@ -54,5 +54,13 @@ module.exports = {
         async: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Open Sans']
+        }
+      }
+    }
   ],
 }
