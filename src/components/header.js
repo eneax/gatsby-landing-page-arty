@@ -136,9 +136,9 @@ class Header extends React.Component {
               alt=""
             />
           </Link>
-          <Link to="/courses">Courses</Link>
-          <Link to="/downloads">Downloads</Link>
-          <Link to="/workshops">Workshops</Link>
+          <Link to="/">Courses</Link>
+          <Link to="/">Downloads</Link>
+          <Link to="/">Workshops</Link>
 
           <StripeCheckout
             amount={5000}

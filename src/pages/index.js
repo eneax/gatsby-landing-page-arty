@@ -96,7 +96,7 @@ const IndexPage = () => (
         </h1>
         <p>Complete courses about the best tools and design systems.</p>
 
-        <Link to="/page-2/">Watch the video</Link>
+        <Link to="/">Watch the video</Link>
 
         <Logos>
           <img src={require("../images/logo-sketch.png")} width="50" alt="" />
