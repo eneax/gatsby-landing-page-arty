@@ -216,7 +216,7 @@ const IndexPage = () => (
       image={require("../images/wallpaper2.jpg")}
       logo={require("../images/logo-react.png")}
       title="React for Designers"
-      text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, minus quo officiis veniam fugit a ullam aliquam facilis minima? Eum quas, repellendus quos quidem id odio temporibus alias error recusandae."
+      text="Learn how to build a modern site using React and the most efficient libraries to get your site/product online. Get familiar with components, Grid CSS, animations, interactions, dynamic data with Contentful and deploying your site with Netlify."
     />
 
     <SectionCaption>12 sections - 6 hours</SectionCaption>
