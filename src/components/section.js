@@ -12,7 +12,7 @@ const SectionGroup = styled.div`
   position: relative;
   
   @media (max-width: 640px) {
-    height: 820px;
+    height: 900px;
   }
 `
 
@@ -23,9 +23,9 @@ const SectionLogo = styled.img`
 `
 
 const SectionTitleGroup = styled.div`
-  max-width: 1060px;
+  max-width: 800px;
   display: grid;
-  grid-template-columns: 300px auto;
+  grid-template-columns: 1fr 1fr;
   margin: 0 auto;
   grid-gap: 20px;
   grid-template-rows: auto 100%;
@@ -48,7 +48,9 @@ const SectionTitle = styled.h3`
 `
 
 const SectionText = styled.p`
-  color: white;
+  position: relative;
+  z-index: 2;
+  color: white;  
 `
 
 const WaveBottom = styled.div`
