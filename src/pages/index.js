@@ -112,7 +112,7 @@ const IndexPage = () => (
     </div>
 
     <Cards>
-      <h2>19 courses, more coming</h2>
+      <h2>20 courses, more coming</h2>
       <CardGroup>
         <Card
           title="Learn iOS 11 Design"
@@ -208,6 +208,11 @@ const IndexPage = () => (
           title="React Native for Designers Part 2"
           text="12 sections"
           image={require("./../images/react-native-two.jpeg")}
+        />
+        <Card
+          title="CSS Layout and Animations"
+          text="9 sections"
+          image={require("./../images/animations.jpeg")}
         />
       </CardGroup>
     </Cards>
