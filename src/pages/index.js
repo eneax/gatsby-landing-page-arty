@@ -63,6 +63,7 @@ const CardGroup = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 40px;
   justify-items: center;
+  padding-bottom: 50px;
 
   @media (max-width: 1060px) {
     grid-template-columns: repeat(2, 1fr);
