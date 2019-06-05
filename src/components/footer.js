@@ -8,11 +8,12 @@ const FooterGroup = styled.div`
   grid-gap: 20px;
 `
 const Text = styled.p`
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   color: #486791;
   max-width: 500px;
   margin: 0 auto;
+  padding: 0 20px;
 `
 const Button = styled.button`
   background: linear-gradient(102.24deg, #9b51e0 0%, #3436e7 100%);
@@ -32,11 +33,15 @@ const Button = styled.button`
   }
 `
 const LinkGroup = styled.div`
-  width: 500px;
   margin: 50px auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
+  text-align: center;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
 
   a {
     transition: 0.8s;
@@ -56,8 +61,7 @@ const Copyright = styled.div`
 const Footer = ({ data, children }) => (
   <FooterGroup>
     <Text>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium
-      consequuntur cupiditate asperiores est!
+      Tweet "Design and code apps with React and Swift. New courses by @designcodeio"
     </Text>
     <Button>Tweet</Button>
 
