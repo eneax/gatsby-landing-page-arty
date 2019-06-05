@@ -137,8 +137,7 @@ class Header extends React.Component {
             />
           </Link>
           <Link to="/">Courses</Link>
-          <Link to="/">Downloads</Link>
-          <Link to="/">Workshops</Link>
+          <Link to="/">React for Designers</Link>
 
           <StripeCheckout
             amount={5000}
