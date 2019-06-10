@@ -74,18 +74,10 @@ const HeaderGroup = styled.div`
   max-width: 800px;
   margin: 0 auto;
   display: grid;  /* by default everything is display column */
-  grid-template-columns: repeat(5, auto); 
-  /* 
-    take max-width and divide by 5, while using the 'auto' value
-    grid-template-columns: auto auto auto auto auto; 
-  */
+  grid-template-columns: repeat(4, auto); 
 
   align-items: center;  /* vertically */
   justify-items: center;  /* horizontally */
-
-  @media (max-width: 640px) {
-    grid-template-columns: repeat(4, auto);
-  }
 `
 
 
