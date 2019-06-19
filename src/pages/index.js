@@ -78,11 +78,25 @@ const Logos = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);  /* 1 fraction --> we want all boxes equally divided */
   grid-gap: 40px;
-  margin: 100px 0;
+  margin: 75px 0;
   justify-items: center;
 
   @media (max-width: 640px) {
     grid-template-columns: repeat(3, 1fr);  /* row of 3 logos per line */
+  }
+
+  img {
+    transition: .8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+
+  /* Blur on Hover */
+  &:hover img {
+    filter: blur(4px);
+  }
+  img:hover {
+    filter: blur(0);
+    transform: scale(1.5);
   }
 `
 
