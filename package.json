@@ -25,6 +25,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-stripe-checkout": "^2.6.3",
+    "smooth-scroll": "^16.1.0",
     "stripe": "^6.31.2",
     "styled-components": "^4.2.0"
   },

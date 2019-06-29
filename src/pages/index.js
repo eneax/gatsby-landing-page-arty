@@ -126,7 +126,7 @@ const IndexPage = () => (
       </HeroGroup>
     </div>
 
-    <Cards>
+    <Cards id="courses">
       <h2>20 courses, more coming</h2>
       <CardGroup>
         <Card
