@@ -121,7 +121,7 @@ class Header extends React.Component {
     return (
       <HeaderWrapper hasScrolled={this.state.hasScrolled}>
         <HeaderGroup>
-          <Link to="/">
+          <Link to="/#top">
             <img
               src={require("../images/logo-designcode.svg")}
               width="30"
