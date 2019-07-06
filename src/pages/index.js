@@ -44,6 +44,8 @@ const SectionCellGroup = styled.div`
 `
 
 const Cards = styled.div`
+  padding-top: 25px;
+
   h2 {
     margin: 50px 20px;
     font-size: 60px;
