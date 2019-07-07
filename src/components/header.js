@@ -74,10 +74,24 @@ const HeaderGroup = styled.div`
   max-width: 800px;
   margin: 0 auto;
   display: grid;  /* by default everything is display column */
-  grid-template-columns: repeat(4, auto); 
+  grid-auto-flow: column;
+  /* grid-gap: 20px;
+  padding-left: 30px;
+  padding-right: 30px; */
 
-  align-items: center;  /* vertically */
-  justify-items: center;  /* horizontally */
+  a:nth-child(1) {
+    display: grid;
+    justify-content: start;
+    align-content: center;
+  }
+`
+
+const Links = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  /* grid-gap: 20px; */
+  justify-content: end;
+  align-content: center;
 `
 
 
@@ -128,17 +142,20 @@ class Header extends React.Component {
               alt=""
             />
           </Link>
-          <Link to="/#courses">Courses</Link>
-          <Link to="/#react">React for Designers</Link>
 
-          <StripeCheckout
-            amount={5000}
-            image="https://cl.ly/0K2f1V3K3h0D/download/Logo.jpg"
-            token={this.handlePurchase}
-            stripeKey={"pk_test_NfZKonMxPTdVX8vxFNUcyRpf00uXFC0iiI"}
-          >
-            <button>Buy</button>
-          </StripeCheckout>
+          <Links>
+            <Link to="/#courses">Courses</Link>
+            <Link to="/#react">React for Designers</Link>
+
+            <StripeCheckout
+              amount={5000}
+              image="https://cl.ly/0K2f1V3K3h0D/download/Logo.jpg"
+              token={this.handlePurchase}
+              stripeKey={"pk_test_NfZKonMxPTdVX8vxFNUcyRpf00uXFC0iiI"}
+            >
+              <button>Buy</button>
+            </StripeCheckout>
+          </Links>
         </HeaderGroup>
       </HeaderWrapper>
     )
