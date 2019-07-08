@@ -54,6 +54,10 @@ const Cards = styled.div`
     background: linear-gradient(104deg, #050a27 0%, #4a548c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: 640px) {
+      margin-top: 65px;
+    }
   }
 `
 
