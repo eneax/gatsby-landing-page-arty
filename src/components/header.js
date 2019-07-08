@@ -33,11 +33,11 @@ const HeaderWrapper = styled.header`
     outline: none;
     cursor: pointer;
     transition: 1s cubic-bezier(0.2, 0.82, 0.2, 1);
+    text-align: center;
 
     @media (max-width: 640px) {
-      a:nth-child(4) {
-        display: none;
-      }
+      font-size: 15px;
+      padding: 8px 10px;
     }
 
     /* Hover effect */
@@ -61,6 +61,12 @@ const HeaderWrapper = styled.header`
     cursor: pointer;
     transition: 1s cubic-bezier(0.2, 0.82, 0.2, 1);
 
+    @media (max-width: 640px) {
+      font-size: 15px;
+      padding: 8px 10px;
+      margin-right: 10px;
+    }
+
     /* Hover effect */
     &:hover {
       background: white;
@@ -77,10 +83,7 @@ const HeaderGroup = styled.div`
   grid-template-columns: repeat(4, auto);
   align-items: center;  /* vertically */
   justify-items: center;  /* horizontally */
-
-  @media (max-width: 640px) {
-    
-  }
+  grid-gap: 10px;
 `
 
 
@@ -132,19 +135,18 @@ class Header extends React.Component {
             />
           </Link>
 
-          
-            <Link to="/#courses">Courses</Link>
-            <Link to="/#react">React for Designers</Link>
+          <Link to="/#courses">Courses</Link>
+          <Link to="/#react">React for Designers</Link>
 
-            <StripeCheckout
-              amount={5000}
-              image="https://cl.ly/0K2f1V3K3h0D/download/Logo.jpg"
-              token={this.handlePurchase}
-              stripeKey={"pk_test_NfZKonMxPTdVX8vxFNUcyRpf00uXFC0iiI"}
-            >
-              <button>Buy</button>
-            </StripeCheckout>
-          
+          <StripeCheckout
+            amount={5000}
+            image="https://cl.ly/0K2f1V3K3h0D/download/Logo.jpg"
+            token={this.handlePurchase}
+            stripeKey={"pk_test_NfZKonMxPTdVX8vxFNUcyRpf00uXFC0iiI"}
+          >
+            <button>Buy</button>
+          </StripeCheckout>
+
         </HeaderGroup>
       </HeaderWrapper>
     )
