@@ -8,11 +8,11 @@ import SEO from "../components/seo"
 const HeroGroup = styled.div`
   max-width: 500px;
   margin: 0 auto;
-  padding: 150px 50px;
+  padding: 250px 50px;
   text-align: center;
 
   @media (max-width: 640px) {
-    padding: 100px 20px;
+    padding: 150px 20px;
   }
 `
 
