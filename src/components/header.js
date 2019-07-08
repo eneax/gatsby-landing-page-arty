@@ -74,24 +74,13 @@ const HeaderGroup = styled.div`
   max-width: 800px;
   margin: 0 auto;
   display: grid;  /* by default everything is display column */
-  grid-auto-flow: column;
-  /* grid-gap: 20px;
-  padding-left: 30px;
-  padding-right: 30px; */
+  grid-template-columns: repeat(4, auto);
+  align-items: center;  /* vertically */
+  justify-items: center;  /* horizontally */
 
-  a:nth-child(1) {
-    display: grid;
-    justify-content: start;
-    align-content: center;
+  @media (max-width: 640px) {
+    
   }
-`
-
-const Links = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  /* grid-gap: 20px; */
-  justify-content: end;
-  align-content: center;
 `
 
 
@@ -143,7 +132,7 @@ class Header extends React.Component {
             />
           </Link>
 
-          <Links>
+          
             <Link to="/#courses">Courses</Link>
             <Link to="/#react">React for Designers</Link>
 
@@ -155,7 +144,7 @@ class Header extends React.Component {
             >
               <button>Buy</button>
             </StripeCheckout>
-          </Links>
+          
         </HeaderGroup>
       </HeaderWrapper>
     )
