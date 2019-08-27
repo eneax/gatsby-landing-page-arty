@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { GlobalStyle } from './styles/globalStyles'
 
-import "./layout.css"
 import Header from "./header"
 import Footer from "./footer"
 
