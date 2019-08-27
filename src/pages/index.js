@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import Card from "../components/card"
 import Section from "../components/section"
 import Wave from "../components/wave"
-import staticData from "../../staticdata.json"
+import cellData from "../data/cellData.json"
 import Cell from "../components/cell";
 import Hero from "../components/hero";
 
@@ -27,14 +27,14 @@ const IndexPage = ({ data }) => (
 
         <Link to="/">Watch the video</Link>
 
-        <Logos>
+        <LogosWrapper>
           <img src={require("../images/logo-sketch.png")} width="50" alt="" />
           <img src={require("../images/logo-figma.png")} width="50" alt="" />
           <img src={require("../images/logo-studio.png")} width="50" alt="" />
           <img src={require("../images/logo-framer.png")} width="50" alt="" />
           <img src={require("../images/logo-react.png")} width="50" alt="" />
           <img src={require("../images/logo-swift.png")} width="50" alt="" />
-        </Logos>
+        </LogosWrapper>
 
         <Wave />
       </HeroGroup>
@@ -155,7 +155,7 @@ const IndexPage = ({ data }) => (
 
     <SectionCaption>12 sections - 6 hours</SectionCaption>
     <SectionCellGroup>
-      {staticData.cells.map((cell) => (
+      {cellData.cells.map((cell) => (
         <Cell
           key={cell.title}
           title={cell.title}
@@ -251,7 +251,7 @@ const CardGroup = styled.div`
   }
 `
 
-const Logos = styled.div`
+const LogosWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);  /* 1 fraction --> we want all boxes equally divided */
   grid-gap: 40px;
