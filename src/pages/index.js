@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
@@ -9,108 +9,16 @@ import Section from "../components/section"
 import Wave from "../components/wave"
 import staticData from "../../staticdata.json"
 import Cell from "../components/cell";
+import Hero from "../components/hero";
 
 
-const HeroGroup = styled.div`
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 150px 50px;
-  text-align: center;
-
-  @media (max-width: 640px) {
-    padding: 100px 20px;
-  }
-`
-
-const SectionCaption = styled.p`
-  font-weight: 600;
-  font-size: 18px;
-  text-transform: uppercase;
-  color: #94a4ba;
-  text-align: center;
-`
-
-const SectionCellGroup = styled.div`
-  max-width: 800px;
-  margin: 0 auto 100px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  padding: 0 20px;
-
-  @media (max-width: 800px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-`
-
-const Cards = styled.div`
-  padding-top: 25px;
-
-  h2 {
-    margin: 50px 20px;
-    font-size: 60px;
-    text-align: center;
-    font-weight: 700;
-    background: linear-gradient(104deg, #050a27 0%, #4a548c 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    @media (max-width: 640px) {
-      margin-top: 65px;
-    }
-  }
-`
-
-const CardGroup = styled.div`
-  max-width: 1060px;
-  margin-right: auto;
-  margin-left: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
-  justify-items: center;
-  padding-bottom: 50px;
-
-  @media (max-width: 1060px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 720px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-`
-
-const Logos = styled.div`
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);  /* 1 fraction --> we want all boxes equally divided */
-  grid-gap: 40px;
-  margin: 75px 0;
-  justify-items: center;
-
-  @media (max-width: 640px) {
-    grid-template-columns: repeat(3, 1fr);  /* row of 3 logos per line */
-  }
-
-  img {
-    transition: .8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-
-
-  /* Blur on Hover */
-  &:hover img {
-    filter: blur(4px);
-  }
-  img:hover {
-    filter: blur(0);
-    transform: scale(1.5);
-  }
-`
-
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
-    <div className="hero">
+    <Hero
+      img={data.desktop.childImageSharp.fluid}
+    >
       <HeroGroup>
         <h1>
           Learn to <br /> design and code React apps
@@ -130,7 +38,7 @@ const IndexPage = () => (
 
         <Wave />
       </HeroGroup>
-    </div>
+    </Hero>
 
     <Cards id="courses">
       <h2>20 courses, more coming</h2>
@@ -259,3 +167,112 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+
+export const query = graphql`
+  {
+    desktop: file(relativePath: { eq: "wallpaper3.jpg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
+
+
+const HeroGroup = styled.div`
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 150px 50px;
+  text-align: center;
+
+  @media (max-width: 640px) {
+    padding: 100px 20px;
+  }
+`
+
+const SectionCaption = styled.p`
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #94a4ba;
+  text-align: center;
+`
+
+const SectionCellGroup = styled.div`
+  max-width: 800px;
+  margin: 0 auto 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  padding: 0 20px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`
+
+const Cards = styled.div`
+  padding-top: 25px;
+
+  h2 {
+    margin: 50px 20px;
+    font-size: 60px;
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(104deg, #050a27 0%, #4a548c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width: 640px) {
+      margin-top: 65px;
+    }
+  }
+`
+
+const CardGroup = styled.div`
+  max-width: 1060px;
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  justify-items: center;
+  padding-bottom: 50px;
+
+  @media (max-width: 1060px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`
+
+const Logos = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);  /* 1 fraction --> we want all boxes equally divided */
+  grid-gap: 40px;
+  margin: 75px 0;
+  justify-items: center;
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);  /* row of 3 logos per line */
+  }
+
+  img {
+    transition: .8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+
+  /* Blur on Hover */
+  &:hover img {
+    filter: blur(4px);
+  }
+  img:hover {
+    filter: blur(0);
+    transform: scale(1.5);
+  }
+`
