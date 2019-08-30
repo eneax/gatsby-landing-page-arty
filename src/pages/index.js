@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from 'styled-components'
 
@@ -10,179 +10,161 @@ import Wave from "../components/wave"
 import cellData from "../data/cellData.json"
 import Cell from "../components/cell";
 import Hero from "../components/hero";
-import Video from "../components/video";
 
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data }) => (
+  <Layout>
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
-  const [state, setState] = useState({ hideVideo: true });
+    <Hero
+      img={data.desktop.childImageSharp.fluid}
+    >
+      <HeroGroup>
+        <h1>
+          Learn to <br /> design and code React apps
+        </h1>
+        <p>Complete courses about the best tools and design systems.</p>
 
-  const showVideo = () => {
-    setState({
-      hideVideo: false
-    })
-  }
+        <Link to="/">Watch the video</Link>
 
-  return (
-    <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <LogosWrapper>
+          <img src={require("../images/logo-sketch.png")} width="50" alt="" />
+          <img src={require("../images/logo-figma.png")} width="50" alt="" />
+          <img src={require("../images/logo-studio.png")} width="50" alt="" />
+          <img src={require("../images/logo-framer.png")} width="50" alt="" />
+          <img src={require("../images/logo-react.png")} width="50" alt="" />
+          <img src={require("../images/logo-swift.png")} width="50" alt="" />
+        </LogosWrapper>
 
-      <Hero
-        img={data.desktop.childImageSharp.fluid}
-      >
-        <HeroGroup>
-          <h1>
-            Learn to <br /> design and code React apps
-          </h1>
-          <p>Complete courses about the best tools and design systems.</p>
+        <Wave />
+      </HeroGroup>
+    </Hero>
 
-          {state.hideVideo 
-            ? <Link to="/" onClick={showVideo}>Watch the video</Link>
-            :  <Video
-                  videoSrcURL="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  videoTitle="Official Music Video on YouTube"
-                />
-          }
+    <Cards id="courses">
+      <h2>20 courses, more coming</h2>
+      <CardGroup>
+        <Card
+          title="Learn iOS 11 Design"
+          text="11 sections"
+          image={require("./../images/ios-design.jpeg")}
+        />
+        <Card
+          title="Learn Sketch"
+          text="21 sections"
+          image={require("./../images/sketch.jpeg")}
+        />
+        <Card
+          title="Learn Swift"
+          text="19 sections"
+          image={require("./../images/swift.jpeg")}
+        />
+        <Card
+          title="Swift Advanced"
+          text="22 sections"
+          image={require("./../images/swift-advanced.jpeg")}
+        />
+        <Card
+          title="Create a SpriteKit Game"
+          text="9 sections"
+          image={require("./../images/spritekit.jpeg")}
+        />
+        <Card
+          title="Create a Sketch Plugin"
+          text="7 sections"
+          image={require("./../images/sketch-plugin.jpeg")}
+        />
+        <Card
+          title="Motion Design in After Effects"
+          text="8 sections"
+          image={require("./../images/motion-ae.jpeg")}
+        />
+        <Card
+          title="ARKit 2"
+          text="11 sections"
+          image={require("./../images/arkit.jpeg")}
+        />
+        <Card
+          title="Video Editing in ScreenFlow"
+          text="4 sections"
+          image={require("./../images/screenflow.jpeg")}
+        />
+        <Card
+          title="Sound Design with Cubase"
+          text="5 sections"
+          image={require("./../images/cubase.jpeg")}
+        />
+        <Card
+          title="React for Designers"
+          text="12 sections"
+          image={require("./../images/react.jpeg")}
+        />
+        <Card
+          title="Design System in Figma"
+          text="10 sections"
+          image={require("./../images/figma-design.jpeg")}
+        />
+        <Card
+          title="Design and Code in Framer X"
+          text="10 sections"
+          image={require("./../images/framer-design.jpeg")}
+        />
+        <Card
+          title="Animating in Principle"
+          text="5 sections"
+          image={require("./../images/principle.jpeg")}
+        />
+        <Card
+          title="Create a Javascript Game"
+          text="6 sections"
+          image={require("./../images/js-game.jpeg")}
+        />
+        <Card
+          title="Vue for Designers"
+          text="11 sections"
+          image={require("./../images/vue.jpeg")}
+        />
+        <Card
+          title="React Native for Designers"
+          text="12 sections"
+          image={require("./../images/react-native.jpeg")}
+        />
+        <Card
+          title="Unity for Designers"
+          text="15 sections"
+          image={require("./../images/unity.jpeg")}
+        />
+        <Card
+          title="React Native for Designers Part 2"
+          text="12 sections"
+          image={require("./../images/react-native-two.jpeg")}
+        />
+        <Card
+          title="CSS Layout and Animations"
+          text="9 sections"
+          image={require("./../images/animations.jpeg")}
+        />
+      </CardGroup>
+    </Cards>
 
-          <LogosWrapper>
-            <img src={require("../images/logo-sketch.png")} width="50" alt="" />
-            <img src={require("../images/logo-figma.png")} width="50" alt="" />
-            <img src={require("../images/logo-studio.png")} width="50" alt="" />
-            <img src={require("../images/logo-framer.png")} width="50" alt="" />
-            <img src={require("../images/logo-react.png")} width="50" alt="" />
-            <img src={require("../images/logo-swift.png")} width="50" alt="" />
-          </LogosWrapper>
+    <Section 
+      image={require("../images/wallpaper.jpg")}
+      logo={require("../images/logo-react.png")}
+      title="React for Designers"
+      text="Learn how to build a modern site using React and the most efficient libraries to get your site/product online. Get familiar with components, Grid CSS, animations, interactions, dynamic data with Contentful and deploying your site with Netlify."
+    />
 
-          <Wave />
-        </HeroGroup>
-      </Hero>
-
-      <Cards id="courses">
-        <h2>20 courses, more coming</h2>
-        <CardGroup>
-          <Card
-            title="Learn iOS 11 Design"
-            text="11 sections"
-            image={require("./../images/ios-design.jpeg")}
-          />
-          <Card
-            title="Learn Sketch"
-            text="21 sections"
-            image={require("./../images/sketch.jpeg")}
-          />
-          <Card
-            title="Learn Swift"
-            text="19 sections"
-            image={require("./../images/swift.jpeg")}
-          />
-          <Card
-            title="Swift Advanced"
-            text="22 sections"
-            image={require("./../images/swift-advanced.jpeg")}
-          />
-          <Card
-            title="Create a SpriteKit Game"
-            text="9 sections"
-            image={require("./../images/spritekit.jpeg")}
-          />
-          <Card
-            title="Create a Sketch Plugin"
-            text="7 sections"
-            image={require("./../images/sketch-plugin.jpeg")}
-          />
-          <Card
-            title="Motion Design in After Effects"
-            text="8 sections"
-            image={require("./../images/motion-ae.jpeg")}
-          />
-          <Card
-            title="ARKit 2"
-            text="11 sections"
-            image={require("./../images/arkit.jpeg")}
-          />
-          <Card
-            title="Video Editing in ScreenFlow"
-            text="4 sections"
-            image={require("./../images/screenflow.jpeg")}
-          />
-          <Card
-            title="Sound Design with Cubase"
-            text="5 sections"
-            image={require("./../images/cubase.jpeg")}
-          />
-          <Card
-            title="React for Designers"
-            text="12 sections"
-            image={require("./../images/react.jpeg")}
-          />
-          <Card
-            title="Design System in Figma"
-            text="10 sections"
-            image={require("./../images/figma-design.jpeg")}
-          />
-          <Card
-            title="Design and Code in Framer X"
-            text="10 sections"
-            image={require("./../images/framer-design.jpeg")}
-          />
-          <Card
-            title="Animating in Principle"
-            text="5 sections"
-            image={require("./../images/principle.jpeg")}
-          />
-          <Card
-            title="Create a Javascript Game"
-            text="6 sections"
-            image={require("./../images/js-game.jpeg")}
-          />
-          <Card
-            title="Vue for Designers"
-            text="11 sections"
-            image={require("./../images/vue.jpeg")}
-          />
-          <Card
-            title="React Native for Designers"
-            text="12 sections"
-            image={require("./../images/react-native.jpeg")}
-          />
-          <Card
-            title="Unity for Designers"
-            text="15 sections"
-            image={require("./../images/unity.jpeg")}
-          />
-          <Card
-            title="React Native for Designers Part 2"
-            text="12 sections"
-            image={require("./../images/react-native-two.jpeg")}
-          />
-          <Card
-            title="CSS Layout and Animations"
-            text="9 sections"
-            image={require("./../images/animations.jpeg")}
-          />
-        </CardGroup>
-      </Cards>
-
-      <Section 
-        image={require("../images/wallpaper.jpg")}
-        logo={require("../images/logo-react.png")}
-        title="React for Designers"
-        text="Learn how to build a modern site using React and the most efficient libraries to get your site/product online. Get familiar with components, Grid CSS, animations, interactions, dynamic data with Contentful and deploying your site with Netlify."
-      />
-
-      <SectionCaption>12 sections - 6 hours</SectionCaption>
-      <SectionCellGroup>
-        {cellData.cells.map((cell) => (
-          <Cell
-            key={cell.title}
-            title={cell.title}
-            image={cell.image}
-          />
-        ))}
-      </SectionCellGroup>
-    </Layout>
-  )
-}
+    <SectionCaption>12 sections - 6 hours</SectionCaption>
+    <SectionCellGroup>
+      {cellData.cells.map((cell) => (
+        <Cell
+          key={cell.title}
+          title={cell.title}
+          image={cell.image}
+        />
+      ))}
+    </SectionCellGroup>
+  </Layout>
+)
 
 export default IndexPage
 
