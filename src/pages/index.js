@@ -10,6 +10,7 @@ import Wave from "../components/wave"
 import cellData from "../data/cellData.json"
 import Cell from "../components/cell";
 import Hero from "../components/hero";
+import Logos from "../components/logos";
 
 
 const IndexPage = ({ data }) => (
@@ -27,15 +28,7 @@ const IndexPage = ({ data }) => (
 
         <Link to="/">Watch the video</Link>
 
-        <LogosWrapper>
-          <img src={require("../images/logo-sketch.png")} width="50" alt="" />
-          <img src={require("../images/logo-figma.png")} width="50" alt="" />
-          <img src={require("../images/logo-studio.png")} width="50" alt="" />
-          <img src={require("../images/logo-framer.png")} width="50" alt="" />
-          <img src={require("../images/logo-react.png")} width="50" alt="" />
-          <img src={require("../images/logo-swift.png")} width="50" alt="" />
-        </LogosWrapper>
-
+        <Logos />
         <Wave />
       </HeroGroup>
     </Hero>
@@ -248,31 +241,5 @@ const CardGroup = styled.div`
 
   @media (max-width: 720px) {
     grid-template-columns: repeat(1, 1fr);
-  }
-`
-
-const LogosWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);  /* 1 fraction --> we want all boxes equally divided */
-  grid-gap: 40px;
-  margin: 75px 0;
-  justify-items: center;
-
-  @media (max-width: 640px) {
-    grid-template-columns: repeat(3, 1fr);  /* row of 3 logos per line */
-  }
-
-  img {
-    transition: .8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-
-
-  /* Blur on Hover */
-  &:hover img {
-    filter: blur(4px);
-  }
-  img:hover {
-    filter: blur(0);
-    transform: scale(1.5);
   }
 `
