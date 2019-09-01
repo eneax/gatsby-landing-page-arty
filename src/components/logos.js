@@ -1,16 +1,41 @@
 import React from 'react'
+import { useStaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 
+const getLogos = graphql`
+  {
+    logos: allContentfulLogos(sort: {fields: title, order: ASC}) {
+      edges {
+        node {
+          id: contentful_id
+          title
+          image {
+            fixed(width: 50) {
+              ...GatsbyContentfulFixed
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+
 const Logos = () => {
+  const { logos } = useStaticQuery(getLogos)
+
   return (
     <LogosWrapper>
-      <img src={require("../images/logo-sketch.png")} width="50" alt="" />
-      <img src={require("../images/logo-figma.png")} width="50" alt="" />
-      <img src={require("../images/logo-studio.png")} width="50" alt="" />
-      <img src={require("../images/logo-framer.png")} width="50" alt="" />
-      <img src={require("../images/logo-react.png")} width="50" alt="" />
-      <img src={require("../images/logo-swift.png")} width="50" alt="" />
+      {logos.edges.map(({ node }) => (
+        <Img
+          key={node.id} 
+          fixed={node.image.fixed}
+          alt={`${node.title} logo`}
+        />
+      ))}
+
     </LogosWrapper>
   )
 }
@@ -27,20 +52,20 @@ const LogosWrapper = styled.div`
     grid-template-columns: repeat(3, 1fr);
   }
 
-  img {
-    transition: .8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-
-
   /* Blur on Hover */
   &:hover {
-    img {
+    .gatsby-image-wrapper {
       filter: blur(4px);
+    }
+  }
 
-      &:hover {
-        filter: blur(0);
-        transform: scale(1.5);
-      }
+  /* Scale hovered img */
+  .gatsby-image-wrapper {
+    transition: .8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    &:hover {
+      filter: blur(0);
+      transform: scale(1.5);
     }
   }
 `
