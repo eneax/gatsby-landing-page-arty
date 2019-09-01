@@ -13,7 +13,9 @@ const Hero = ({ img, className, children }) => {
       className={className}
       fluid={img || data.childImageSharp.fluid} // query from graphql
     >
-      {children}
+      <HeroGroup>
+        {children}
+      </HeroGroup>
     </BackgroundImage>
   )
 }
@@ -50,6 +52,17 @@ export default styled(Hero)`
   background-size: cover;
   background-position: center;
   position: relative;
+`
+
+const HeroGroup = styled.div`
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 150px 50px;
+  text-align: center;
+
+  @media (max-width: 640px) {
+    padding: 100px 20px;
+  }
 
   h1 {
     margin: 0;

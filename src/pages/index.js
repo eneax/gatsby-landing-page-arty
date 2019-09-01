@@ -21,16 +21,14 @@ const IndexPage = ({ data }) => (
     <Hero
       img={data.desktop.childImageSharp.fluid}
     >
-      <HeroGroup>
-        <h1>
-          Learn to <br /> design and code React apps
-        </h1>
-        <p>Complete courses about the best tools and design systems.</p>
+      <h1>
+        Learn to <br /> design and code React apps
+      </h1>
+      <p>Complete courses about the best tools and design systems.</p>
 
-        <Logos />
-        <ArrowDown />
-        <Wave />
-      </HeroGroup>
+      <Logos />
+      <ArrowDown />
+      <Wave />
     </Hero>
 
     <Cards id="courses">
@@ -171,17 +169,6 @@ export const query = graphql`
         }
       }
     }
-  }
-`
-
-const HeroGroup = styled.div`
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 150px 50px;
-  text-align: center;
-
-  @media (max-width: 640px) {
-    padding: 100px 20px;
   }
 `
 
