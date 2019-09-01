@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { FaArrowDown } from 'react-icons/fa';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -26,9 +27,14 @@ const IndexPage = ({ data }) => (
         </h1>
         <p>Complete courses about the best tools and design systems.</p>
 
-        <Link to="/">Watch the video</Link>
-
         <Logos />
+
+        <div className='bounce'>
+          <Link to="/#courses">
+            <FaArrowDown />
+          </Link>
+        </div>
+        
         <Wave />
       </HeroGroup>
     </Hero>
@@ -174,6 +180,17 @@ export const query = graphql`
   }
 `
 
+export const bounce = keyframes`
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+`
 
 const HeroGroup = styled.div`
   max-width: 500px;
@@ -183,6 +200,20 @@ const HeroGroup = styled.div`
 
   @media (max-width: 640px) {
     padding: 100px 20px;
+  }
+
+  .bounce {
+    animation: ${bounce};
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+    a {
+      padding: 12px 10px 10px 10px;
+
+      svg {
+        position: static;
+      }
+    }
   }
 `
 
