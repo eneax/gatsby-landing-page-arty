@@ -33,9 +33,7 @@ const IndexPage = ({ data }) => (
 
     <Cards id="courses">
       <h2>20 courses, more coming</h2>
-      <CardGroup>
-        <Card />
-      </CardGroup>
+      <Card />
     </Cards>
 
     <Section 
@@ -60,7 +58,7 @@ const IndexPage = ({ data }) => (
 
 export default IndexPage
 
-
+// query
 export const query = graphql`
   {
     desktop: file(relativePath: { eq: "wallpaper3.jpg" }) {
@@ -73,6 +71,7 @@ export const query = graphql`
   }
 `
 
+// styles
 const SectionCaption = styled.p`
   font-weight: 600;
   font-size: 18px;
@@ -109,24 +108,5 @@ const Cards = styled.div`
     @media (max-width: 640px) {
       margin-top: 65px;
     }
-  }
-`
-
-const CardGroup = styled.div`
-  max-width: 1060px;
-  margin-right: auto;
-  margin-left: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
-  justify-items: center;
-  padding-bottom: 50px;
-
-  @media (max-width: 1060px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 720px) {
-    grid-template-columns: repeat(1, 1fr);
   }
 `

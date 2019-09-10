@@ -8,7 +8,7 @@ const Card = () => {
   const { cards } = useStaticQuery(getCards)
 
   return (
-    <>
+    <CardGroup>
       {cards.edges.map(({ node }) => (
         <CardWrapper key={node.id}>
           <Img
@@ -19,7 +19,7 @@ const Card = () => {
           <p>{node.text}</p>
         </CardWrapper>
       ))}
-    </>
+    </CardGroup>
   )
 }
 
@@ -47,6 +47,25 @@ const getCards = graphql`
 `
 
 // styles
+const CardGroup = styled.div`
+  max-width: 1060px;
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  justify-items: center;
+  padding-bottom: 50px;
+
+  @media (max-width: 1060px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`
+
 const CardWrapper = styled.div`
   width: 300px;
   height: 225px;
