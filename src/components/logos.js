@@ -4,25 +4,6 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 
-const getLogos = graphql`
-  {
-    logos: allContentfulLogos(sort: {fields: title, order: ASC}) {
-      edges {
-        node {
-          id: contentful_id
-          title
-          image {
-            fixed(width: 50) {
-              ...GatsbyContentfulFixed
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
-
 const Logos = () => {
   const { logos } = useStaticQuery(getLogos)
 
@@ -41,6 +22,26 @@ const Logos = () => {
 }
 
 
+// query
+const getLogos = graphql`
+  {
+    logos: allContentfulLogos(sort: {fields: title, order: ASC}) {
+      edges {
+        node {
+          id: contentful_id
+          title
+          image {
+            fixed(width: 50) {
+              ...GatsbyContentfulFixed
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+// styles
 const LogosWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
