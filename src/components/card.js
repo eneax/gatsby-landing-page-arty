@@ -1,6 +1,52 @@
 import React from 'react'
+import { useStaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 
+
+const Card = () => {
+  const { cards } = useStaticQuery(getCards)
+
+  return (
+    <>
+      {cards.edges.map(({ node }) => (
+        <CardWrapper key={node.id}>
+          <Img
+            fixed={node.image.fixed}
+            alt={`${node.title} card`}
+          />
+          <h3>{node.title}</h3>
+          <p>{node.text}</p>
+        </CardWrapper>
+      ))}
+    </>
+  )
+}
+
+export default Card
+
+
+// query
+const getCards = graphql`
+  {
+    cards: allContentfulCards(sort: {fields: title, order: ASC}) {
+      edges {
+        node {
+          id: contentful_id
+          title
+          text
+          image {
+            fixed {
+              ...GatsbyContentfulFixed
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+// styles
 const CardWrapper = styled.div`
   width: 300px;
   height: 225px;
@@ -17,15 +63,15 @@ const CardWrapper = styled.div`
     transform: scale(1.1, 1.1);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
   }
-  &:hover img {
+  &:hover .gatsby-image-wrapper {
     transform: translateY(-20px);
   }
 
   /* Style img */
-  img {
-    position: absolute;
+  .gatsby-image-wrapper {
+    position: absolute !important;
     top: 0;
-    height: 110%;
+    height: 110% !important;
     z-index: -1;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
@@ -46,13 +92,3 @@ const CardWrapper = styled.div`
     margin: 0 0 20px 20px;
   }
 `
-
-const Card = props => (
-  <CardWrapper>
-    <img src={props.image} alt=""/>
-    <h3>{props.title}</h3>
-    <p>{props.text}</p>
-  </CardWrapper>
-)
-
-export default Card
