@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 
 const Footer = () => {
-  const { footer, link } = useStaticQuery(getLink)
+  const { footer, link, copyright } = useStaticQuery(getLink)
 
   return (
     <FooterGroup>
@@ -15,6 +15,7 @@ const Footer = () => {
             <DownloadBtn 
               href={node.downloadButton}
               target='_blank'
+              rel='noopener noreferrer'
             >
               {node.downloadButtonText}
             </DownloadBtn>
@@ -33,9 +34,15 @@ const Footer = () => {
       </LinkGroup>
       
       <Copyright>
-        For more open-source code, have a look at my own little corner of the web:{" "}
-        <a href="https://eneaxharja.com">eneaxharja.com</a>{" "}
-        © 2019
+        {
+          copyright.edges.map(({ node }) => (
+            <p>
+              {node.copyrightText}
+              <a href={node.copyrightUrl} target='_blank' rel='noopener noreferrer'>{node.copyrightUrlText} </a>
+              © {new Date().getFullYear()}
+            </p>
+          ))
+        }
       </Copyright>
     </FooterGroup>
   )
@@ -62,6 +69,15 @@ const getLink = graphql`
           url
           title
           createdAt
+        }
+      }
+    }
+    copyright: allContentfulFooterCopyright {
+      edges {
+        node {
+          copyrightText
+          copyrightUrl
+          copyrightUrlText
         }
       }
     }
