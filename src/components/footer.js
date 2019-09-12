@@ -4,19 +4,23 @@ import styled from 'styled-components'
 
 
 const Footer = () => {
-  const { link } = useStaticQuery(getLink)
+  const { footer, link } = useStaticQuery(getLink)
 
   return (
     <FooterGroup>
-      <Text>
-        The entire code of this website is open-source and available for free on my GitHub repo!
-      </Text>
-      <DownloadBtn 
-        href='https://github.com/eneax/gatsby-landing-page.git' 
-        target='_blank'
-      >
-        Download
-      </DownloadBtn>
+      {
+        footer.edges.map(({ node }) => (
+          <>
+            <Text>{node.text}</Text>
+            <DownloadBtn 
+              href={node.downloadButton}
+              target='_blank'
+            >
+              {node.downloadButtonText}
+            </DownloadBtn>
+          </>
+        ))
+      }
 
       <LinkGroup>
         {
@@ -43,6 +47,15 @@ export default Footer
 // query
 const getLink = graphql`
   {
+    footer: allContentfulFooterContent {
+      edges {
+        node {
+          text
+          downloadButton
+          downloadButtonText
+        }
+      }
+    }
     link: allContentfulLink(sort: { fields: [createdAt], order: ASC }) {
       edges {
         node {
