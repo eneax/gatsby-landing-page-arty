@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
 import { GlobalStyle } from './globalStyles'
 
 import Header from "./header"
@@ -12,38 +11,12 @@ if (typeof window !== "undefined") {
 }
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-        allContentfulLink(sort: { fields: [createdAt], order: ASC }) {
-          edges {
-            node {
-              title
-              url
-              createdAt
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <GlobalStyle />
-        <Header />
-        {children}
-        <Footer data={data}>
-          Backgrounds made in Cinema 4D, iOS app in Swift, site in React.{" "}
-          <a href="mailto:support@designcode.io">Email us</a> to ask anything. ©
-          2018
-        </Footer>
-      </>
-    )}
-  />
+  <>
+    <GlobalStyle />
+    <Header />
+    {children}
+    <Footer />
+  </>
 )
 
 Layout.propTypes = {
