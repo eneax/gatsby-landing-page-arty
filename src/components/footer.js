@@ -1,6 +1,55 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import { useStaticQuery, graphql } from "gatsby"
+import styled from 'styled-components'
 
+
+const Footer = () => {
+  const { link } = useStaticQuery(getLink)
+
+  return (
+    <FooterGroup>
+      <Text>
+        Tweet "Design and code apps with React and Swift. New courses by @designcodeio"
+      </Text>
+      <Button>Tweet</Button>
+
+      <LinkGroup>
+        {
+          link.edges.map(({ node }) => (
+            <a key={node.url} href={node.url}>
+              {node.title}
+            </a>
+          ))
+        }
+      </LinkGroup>
+      
+      <Copyright>
+        Backgrounds made in Cinema 4D, iOS app in Swift, site in React.{" "}
+        <a href="mailto:support@designcode.io">Email us</a> to ask anything. © 2018
+      </Copyright>
+    </FooterGroup>
+  )
+}
+
+export default Footer
+
+
+// query
+const getLink = graphql`
+  {
+    link: allContentfulLink(sort: { fields: [createdAt], order: ASC }) {
+      edges {
+        node {
+          url
+          title
+          createdAt
+        }
+      }
+    }
+  }
+`
+
+// styles
 const FooterGroup = styled.div`
   background: #f1f3f5;
   padding: 50px 0;
@@ -32,6 +81,7 @@ const Button = styled.button`
     transform: translateY(-3px);
   }
 `
+
 const LinkGroup = styled.div`
   margin: 50px auto;
   display: grid;
@@ -57,22 +107,3 @@ const Copyright = styled.div`
   margin: 0 auto;
   padding: 0 20px;
 `
-
-const Footer = ({ data, children }) => (
-  <FooterGroup>
-    <Text>
-      Tweet "Design and code apps with React and Swift. New courses by @designcodeio"
-    </Text>
-    <Button>Tweet</Button>
-
-    <LinkGroup>
-      {data.allContentfulLink.edges.map(edge => (
-        <a key={edge.node.url} href={edge.node.url}>{edge.node.title}</a>
-      ))}
-    </LinkGroup>
-    
-    <Copyright>{children}</Copyright>
-  </FooterGroup>
-)
-
-export default Footer
