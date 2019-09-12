@@ -9,9 +9,14 @@ const Footer = () => {
   return (
     <FooterGroup>
       <Text>
-        Tweet "Design and code apps with React and Swift. New courses by @designcodeio"
+        The entire code of this website is open-source and available for free on my GitHub repo!
       </Text>
-      <Button>Tweet</Button>
+      <DownloadBtn 
+        href='https://github.com/eneax/gatsby-landing-page.git' 
+        target='_blank'
+      >
+        Download
+      </DownloadBtn>
 
       <LinkGroup>
         {
@@ -24,8 +29,9 @@ const Footer = () => {
       </LinkGroup>
       
       <Copyright>
-        Backgrounds made in Cinema 4D, iOS app in Swift, site in React.{" "}
-        <a href="mailto:support@designcode.io">Email us</a> to ask anything. © 2018
+        For more open-source code, have a look at my own little corner of the web:{" "}
+        <a href="https://eneaxharja.com">eneaxharja.com</a>{" "}
+        © 2019
       </Copyright>
     </FooterGroup>
   )
@@ -64,7 +70,8 @@ const Text = styled.p`
   margin: 0 auto;
   padding: 0 20px;
 `
-const Button = styled.button`
+
+const DownloadBtn = styled.a`
   background: linear-gradient(102.24deg, #9b51e0 0%, #3436e7 100%);
   box-shadow: 0px 10px 20px rgba(101, 41, 255, 0.15);
   border-radius: 30px;
@@ -106,4 +113,5 @@ const Copyright = styled.div`
   max-width: 500px;
   margin: 0 auto;
   padding: 0 20px;
+  text-align: center;
 `
