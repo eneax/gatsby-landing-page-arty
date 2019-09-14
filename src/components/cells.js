@@ -5,11 +5,13 @@ import styled from 'styled-components'
 
 
 const Cells = () => {
-  const { cells } = useStaticQuery(getCells)
+  const { heading, cells } = useStaticQuery(getCells)
 
   return (
     <>
-    <SectionCaption>12 sections - 6 hours</SectionCaption>
+    <CellsHeading>
+      {heading.cellHeading}
+    </CellsHeading>
     <CellGroupWrapper>
       {
         cells.edges.map(({ node }) => (
@@ -33,6 +35,10 @@ export default Cells
 // query
 const getCells = graphql`
   {
+    heading: contentfulCellHeading {
+      id: contentful_id
+      cellHeading
+    }
     cells: allContentfulCell(sort: {fields: title, order: ASC}) {
       edges {
         node {
@@ -50,7 +56,7 @@ const getCells = graphql`
 `
 
 // style
-const SectionCaption = styled.p`
+const CellsHeading = styled.p`
   font-weight: 600;
   font-size: 18px;
   text-transform: uppercase;
