@@ -5,13 +5,11 @@ import styled from 'styled-components'
 
 
 const Cells = () => {
-  const { heading, cells } = useStaticQuery(getCells)
+  const { heading:{ cellHeading }, cells } = useStaticQuery(getCells)
 
   return (
     <>
-    <CellsHeading>
-      {heading.cellHeading}
-    </CellsHeading>
+    <CellsHeading>{cellHeading}</CellsHeading>
     <CellGroupWrapper>
       {
         cells.edges.map(({ node }) => (
