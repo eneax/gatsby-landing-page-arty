@@ -7,8 +7,7 @@ import SEO from "../components/seo"
 import Card from "../components/card"
 import Section from "../components/section"
 import Wave from "../components/wave"
-import cellData from "../data/cellData.json"
-import Cell from "../components/cell";
+import Cells from "../components/cells";
 import Hero from "../components/hero";
 import Logos from "../components/logos";
 import ArrowDown from "../components/arrowDown";
@@ -44,19 +43,12 @@ const IndexPage = ({ data }) => (
     />
 
     <SectionCaption>12 sections - 6 hours</SectionCaption>
-    <SectionCellGroup>
-      {cellData.cells.map((cell) => (
-        <Cell
-          key={cell.title}
-          title={cell.title}
-          image={cell.image}
-        />
-      ))}
-    </SectionCellGroup>
+    <Cells />
   </Layout>
 )
 
 export default IndexPage
+
 
 // query
 export const query = graphql`
@@ -78,19 +70,6 @@ const SectionCaption = styled.p`
   text-transform: uppercase;
   color: #94a4ba;
   text-align: center;
-`
-
-const SectionCellGroup = styled.div`
-  max-width: 800px;
-  margin: 0 auto 100px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  padding: 0 20px;
-
-  @media (max-width: 800px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
 `
 
 const Cards = styled.div`
