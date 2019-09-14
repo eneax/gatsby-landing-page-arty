@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Card from "../components/card"
+import Cards from "../components/cards"
 import Section from "../components/section"
 import Wave from "../components/wave"
 import Cells from "../components/cells";
@@ -30,10 +30,7 @@ const IndexPage = ({ data }) => (
       <Wave />
     </Hero>
 
-    <Cards id="courses">
-      <h2>20 courses, more coming</h2>
-      <Card />
-    </Cards>
+    <Cards />
 
     <Section 
       image={require("../images/wallpaper.jpg")}
@@ -72,20 +69,3 @@ const SectionCaption = styled.p`
   text-align: center;
 `
 
-const Cards = styled.div`
-  padding-top: 25px;
-
-  h2 {
-    margin: 50px 20px;
-    font-size: 60px;
-    text-align: center;
-    font-weight: 700;
-    background: linear-gradient(104deg, #050a27 0%, #4a548c 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    @media (max-width: 640px) {
-      margin-top: 65px;
-    }
-  }
-`

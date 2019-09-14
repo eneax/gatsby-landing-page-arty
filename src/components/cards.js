@@ -4,26 +4,30 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 
-const Card = () => {
+const Cards = () => {
   const { cards } = useStaticQuery(getCards)
 
   return (
-    <CardGroup>
-      {cards.edges.map(({ node }) => (
-        <CardWrapper key={node.id}>
-          <Img
-            fixed={node.image.fixed}
-            alt={`${node.title} card`}
-          />
-          <h3>{node.title}</h3>
-          <p>{node.text}</p>
-        </CardWrapper>
-      ))}
-    </CardGroup>
+    <CardsWrapper id="courses">
+      <CardTitle>20 courses, more coming</CardTitle>
+
+      <CardGroup>
+        {cards.edges.map(({ node }) => (
+          <CardWrapper key={node.id}>
+            <Img
+              fixed={node.image.fixed}
+              alt={`${node.title} card`}
+            />
+            <h3>{node.title}</h3>
+            <p>{node.text}</p>
+          </CardWrapper>
+        ))}
+      </CardGroup>
+    </CardsWrapper>
   )
 }
 
-export default Card
+export default Cards
 
 
 // query
@@ -47,6 +51,24 @@ const getCards = graphql`
 `
 
 // styles
+const CardsWrapper = styled.div`
+  padding-top: 25px;
+`
+
+const CardTitle = styled.h2`
+  margin: 50px 20px;
+  font-size: 60px;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(104deg, #050a27 0%, #4a548c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (max-width: 640px) {
+    margin-top: 65px;
+  }
+`
+
 const CardGroup = styled.div`
   max-width: 1060px;
   margin-right: auto;
