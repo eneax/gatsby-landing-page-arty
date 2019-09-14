@@ -8,6 +8,8 @@ const Cells = () => {
   const { cells } = useStaticQuery(getCells)
 
   return (
+    <>
+    <SectionCaption>12 sections - 6 hours</SectionCaption>
     <CellGroupWrapper>
       {
         cells.edges.map(({ node }) => (
@@ -20,6 +22,7 @@ const Cells = () => {
         ))
       }
     </CellGroupWrapper>
+    </>
   )
 }
 
@@ -47,6 +50,14 @@ const getCells = graphql`
 `
 
 // style
+const SectionCaption = styled.p`
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #94a4ba;
+  text-align: center;
+`
+
 const CellGroupWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto 100px;

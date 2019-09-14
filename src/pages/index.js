@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import styled from 'styled-components'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -39,7 +38,6 @@ const IndexPage = ({ data }) => (
       text="Learn how to build a modern site using React and the most efficient libraries to get your site/product online. Get familiar with components, Grid CSS, animations, interactions, dynamic data with Contentful and deploying your site with Netlify."
     />
 
-    <SectionCaption>12 sections - 6 hours</SectionCaption>
     <Cells />
   </Layout>
 )
@@ -59,13 +57,3 @@ export const query = graphql`
     }
   }
 `
-
-// styles
-const SectionCaption = styled.p`
-  font-weight: 600;
-  font-size: 18px;
-  text-transform: uppercase;
-  color: #94a4ba;
-  text-align: center;
-`
-
