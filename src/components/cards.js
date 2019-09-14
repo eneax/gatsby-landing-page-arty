@@ -5,11 +5,11 @@ import styled from 'styled-components'
 
 
 const Cards = () => {
-  const { cards } = useStaticQuery(getCards)
+  const { heading:{ cardHeading }, cards } = useStaticQuery(getCards)
 
   return (
     <CardsWrapper id="courses">
-      <CardTitle>20 courses, more coming</CardTitle>
+      <CardTitle>{cardHeading}</CardTitle>
 
       <CardGroup>
         {cards.edges.map(({ node }) => (
@@ -33,6 +33,10 @@ export default Cards
 // query
 const getCards = graphql`
   {
+    heading: contentfulCardHeading {
+      id: contentful_id
+      cardHeading
+    }
     cards: allContentfulCards(sort: {fields: title, order: ASC}) {
       edges {
         node {
