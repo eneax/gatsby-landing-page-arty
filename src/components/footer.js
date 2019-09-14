@@ -10,7 +10,7 @@ const Footer = () => {
     <FooterGroup>
       {
         footer.edges.map(({ node }) => (
-          <>
+          <React.Fragment key={node.downloadButton}>
             <Text>{node.text}</Text>
             <DownloadBtn 
               href={node.downloadButton}
@@ -19,7 +19,7 @@ const Footer = () => {
             >
               {node.downloadButtonText}
             </DownloadBtn>
-          </>
+          </React.Fragment>
         ))
       }
 
@@ -36,7 +36,7 @@ const Footer = () => {
       <Copyright>
         {
           copyright.edges.map(({ node }) => (
-            <p>
+            <p key={node.copyrightUrl}>
               {node.copyrightText}
               <a href={node.copyrightUrl} target='_blank' rel='noopener noreferrer'>{node.copyrightUrlText} </a>
               © {new Date().getFullYear()}
