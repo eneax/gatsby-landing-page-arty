@@ -4,24 +4,23 @@ import styled from 'styled-components'
 
 
 const Footer = () => {
-  const { footer, link, copyright } = useStaticQuery(getLink)
+  const { 
+    footer: { text, downloadButton, downloadButtonText }, 
+    link, copyright 
+  } = useStaticQuery(getLink)
 
   return (
     <FooterGroup>
-      {
-        footer.edges.map(({ node }) => (
-          <React.Fragment key={node.downloadButton}>
-            <Text>{node.text}</Text>
-            <DownloadBtn 
-              href={node.downloadButton}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              {node.downloadButtonText}
-            </DownloadBtn>
-          </React.Fragment>
-        ))
-      }
+      <React.Fragment key={downloadButton}>
+        <Text>{text}</Text>
+        <DownloadBtn 
+          href={downloadButton}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          {downloadButtonText}
+        </DownloadBtn>
+      </React.Fragment>
 
       <LinkGroup>
         {
@@ -54,14 +53,10 @@ export default Footer
 // query
 const getLink = graphql`
   {
-    footer: allContentfulFooterContent {
-      edges {
-        node {
-          text
-          downloadButton
-          downloadButtonText
-        }
-      }
+    footer: contentfulFooterContent {
+      text
+      downloadButton
+      downloadButtonText
     }
     link: allContentfulLink(sort: { fields: [createdAt], order: ASC }) {
       edges {
