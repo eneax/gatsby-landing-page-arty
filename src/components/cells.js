@@ -5,7 +5,10 @@ import styled from 'styled-components'
 
 
 const Cells = () => {
-  const { heading:{ cellHeading }, cells } = useStaticQuery(getCells)
+  const { 
+    heading: { cellHeading }, 
+    cells 
+  } = useStaticQuery(getCells)
 
   return (
     <>
@@ -37,7 +40,7 @@ const getCells = graphql`
       id: contentful_id
       cellHeading
     }
-    cells: allContentfulCell(sort: {fields: title, order: ASC}) {
+    cells: allContentfulCells(sort: {fields: title, order: ASC}) {
       edges {
         node {
           id: contentful_id
