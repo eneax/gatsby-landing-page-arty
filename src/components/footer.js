@@ -6,7 +6,8 @@ import styled from 'styled-components'
 const Footer = () => {
   const { 
     footer: { text, downloadButton, downloadButtonText }, 
-    link, copyright 
+    links, 
+    copyright: { copyrightText, copyrightUrl, copyrightUrlText},
   } = useStaticQuery(getLink)
 
   return (
@@ -24,7 +25,7 @@ const Footer = () => {
 
       <LinkGroup>
         {
-          link.edges.map(({ node }) => (
+          links.edges.map(({ node }) => (
             <a key={node.url} href={node.url}>
               {node.title}
             </a>
@@ -33,15 +34,11 @@ const Footer = () => {
       </LinkGroup>
       
       <Copyright>
-        {
-          copyright.edges.map(({ node }) => (
-            <p key={node.copyrightUrl}>
-              {node.copyrightText}
-              <a href={node.copyrightUrl} target='_blank' rel='noopener noreferrer'>{node.copyrightUrlText} </a>
-              © {new Date().getFullYear()}
-            </p>
-          ))
-        }
+        <p key={copyrightUrl}>
+          {copyrightText}
+          <a href={copyrightUrl} target='_blank' rel='noopener noreferrer'>{copyrightUrlText} </a>
+          © {new Date().getFullYear()}
+        </p>
       </Copyright>
     </FooterGroup>
   )
@@ -57,8 +54,8 @@ const getLink = graphql`
       text
       downloadButton
       downloadButtonText
-    }
-    link: allContentfulLink(sort: { fields: [createdAt], order: ASC }) {
+    }    
+    links: allContentfulFooterLinks {
       edges {
         node {
           url
@@ -67,14 +64,10 @@ const getLink = graphql`
         }
       }
     }
-    copyright: allContentfulFooterCopyright {
-      edges {
-        node {
-          copyrightText
-          copyrightUrl
-          copyrightUrlText
-        }
-      }
+    copyright: contentfulFooterCopyright {
+      copyrightText
+      copyrightUrl
+      copyrightUrlText
     }
   }
 `
