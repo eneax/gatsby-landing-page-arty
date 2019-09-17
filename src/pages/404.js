@@ -1,26 +1,43 @@
-import React from "react"
+import React from 'react'
+import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
+const NotFoundPage = () => {
+  const { 
+    notFound: { title, subtitle } 
+  } = useStaticQuery(getNotFound)
+  
+  return (
+    <Layout>
+      <SEO title="404: Not found" />
 
-    <ContentWrapper>
-      <ContentGroup>
-        <h1>NOT FOUND</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      </ContentGroup>
-    </ContentWrapper>
+      <ContentWrapper>
+        <ContentGroup>
+          <h1>{title}</h1>
+          <p>{subtitle}</p>
+        </ContentGroup>
+      </ContentWrapper>
 
-  </Layout>
-)
+    </Layout>
+  )
+}
 
 export default NotFoundPage
 
+
+// query
+const getNotFound = graphql`
+  {
+    notFound: contentfulNotFoundPage {
+      title
+      subtitle
+    }
+  }
+`
 
 // styles
 const ContentWrapper = styled.div`
