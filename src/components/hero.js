@@ -1,41 +1,53 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled, { keyframes } from 'styled-components'
-
 import BackgroundImage from 'gatsby-background-image'
 
+import Logos from "../components/logos";
+import ArrowDown from "../components/arrowDown";
+import Wave from "../components/wave"
 
-const Hero = ({ img, className, children }) => {
-  const data = useStaticQuery(getDefaultBcgImg)
+
+const Hero = ({ className }) => {
+  const { 
+    hero: { image, title, subtitle }
+  } = useStaticQuery(getHero)
   
   return (
     <BackgroundImage 
       className={className}
-      fluid={img || data.childImageSharp.fluid} // query from graphql
+      fluid={image.fluid}
     >
       <HeroGroup>
-        {children}
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
+
+        <Logos />
+        <ArrowDown />
+        <Wave />
       </HeroGroup>
     </BackgroundImage>
   )
 }
 
 
-// Query
-const getDefaultBcgImg = graphql`
+// query
+const getHero = graphql`
   {
-    defaultBcg: file(relativePath: {eq: "wallpaper3.jpeg"}) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 4160) {
-          ...GatsbyImageSharpFluid_withWebp
+    hero: contentfulHero {
+      image {
+        fluid {
+          ...GatsbyContentfulFluid
         }
       }
+      title
+      subtitle
     }
   }
 `
 
 
-// Styles
+// styles
 export const heroAnimation = keyframes`
   0% {
     opacity: 0;

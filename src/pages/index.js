@@ -1,34 +1,18 @@
 import React from "react"
-import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Hero from "../components/hero";
 import Cards from "../components/cards"
 import Section from "../components/section"
-import Wave from "../components/wave"
 import Cells from "../components/cells";
-import Hero from "../components/hero";
-import Logos from "../components/logos";
-import ArrowDown from "../components/arrowDown";
 
 
-const IndexPage = ({ data }) => (
+const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
-    <Hero
-      img={data.desktop.childImageSharp.fluid}
-    >
-      <h1>
-        Learn to <br /> design and code React apps
-      </h1>
-      <p>Complete courses about the best tools and design systems.</p>
-
-      <Logos />
-      <ArrowDown />
-      <Wave />
-    </Hero>
-
+    <Hero />
     <Cards />
 
     <Section 
@@ -43,17 +27,3 @@ const IndexPage = ({ data }) => (
 )
 
 export default IndexPage
-
-
-// query
-export const query = graphql`
-  {
-    desktop: file(relativePath: { eq: "wallpaper3.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 4160) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-  }
-`
