@@ -14,14 +14,7 @@ const IndexPage = () => (
 
     <Hero />
     <Cards />
-
-    <Section 
-      image={require("../images/wallpaper.jpg")}
-      logo={require("../images/logo-react.png")}
-      title="React for Designers"
-      text="Learn how to build a modern site using React and the most efficient libraries to get your site/product online. Get familiar with components, Grid CSS, animations, interactions, dynamic data with Contentful and deploying your site with Netlify."
-    />
-
+    <Section />
     <Cells />
   </Layout>
 )

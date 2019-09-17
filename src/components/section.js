@@ -1,9 +1,62 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import BackgroundImage from 'gatsby-background-image'
+import Img from 'gatsby-image'
 import Wave from '../components/wave'
 
-const SectionGroup = styled.div`
-  background: url(${props => props.image});
+
+
+const Section = ({ className }) => {
+  const { 
+    section: { backgroundImage, logoImage, title, description }
+  } = useStaticQuery(getSection)
+
+  return (
+    <BackgroundImage 
+      id="react"
+      className={className}
+      fluid={backgroundImage.fluid}
+    >
+      <WaveTop><Wave /></WaveTop>
+      <WaveBottom><Wave /></WaveBottom>
+
+      <SectionLogo 
+        fluid={logoImage.fluid} 
+        alt={`${title} logo`}
+      />
+
+      <SectionGroup>
+        <SectionTitle>{title}</SectionTitle>
+        <SectionDescription>{description}</SectionDescription>
+      </SectionGroup>
+    </BackgroundImage>
+  )
+}
+
+
+// graphql
+const getSection = graphql`
+  {
+    section: contentfulSection {
+      backgroundImage {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      logoImage {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      title
+      description
+    }
+  }
+`
+
+// styles
+export default styled(Section)`
   height: 720px;
   background-size: cover;
   display: grid;
@@ -16,13 +69,13 @@ const SectionGroup = styled.div`
   }
 `
 
-const SectionLogo = styled.img`
+const SectionLogo = styled(Img)`
   align-self: end;
   width: 128px;
   margin: 0 auto;
 `
 
-const SectionTitleGroup = styled.div`
+const SectionGroup = styled.div`
   max-width: 800px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -47,7 +100,7 @@ const SectionTitle = styled.h3`
   }
 `
 
-const SectionText = styled.p`
+const SectionDescription = styled.p`
   position: relative;
   z-index: 2;
   color: white;  
@@ -65,19 +118,3 @@ const WaveTop = styled.div`
   top: -6px;
   transform: rotate(180deg);
 `
-
-const Section = props => (
-	<SectionGroup id="react" image={props.image}>
-    <WaveTop><Wave /></WaveTop>
-    <WaveBottom><Wave /></WaveBottom>
-
-		<SectionLogo src={props.logo} />
-
-		<SectionTitleGroup>
-			<SectionTitle>{props.title}</SectionTitle>
-			<SectionText>{props.text}</SectionText>
-		</SectionTitleGroup>
-	</SectionGroup>
-)
-
-export default Section
