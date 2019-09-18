@@ -9,7 +9,7 @@ const Header = () => {
   const hasScrolled = useAnimateOnScrolled()
 
   const {
-    navbarLogo: {logoUrl, logo},
+    navbarLogo: { logoUrl, logo },
     navbarLinks
   } = useStaticQuery(getNavbar)
 

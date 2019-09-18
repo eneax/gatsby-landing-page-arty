@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
@@ -20,6 +20,8 @@ const Logos = () => {
     </LogosWrapper>
   )
 }
+
+export default Logos
 
 
 // query
@@ -70,6 +72,3 @@ const LogosWrapper = styled.div`
     }
   }
 `
-
-
-export default Logos

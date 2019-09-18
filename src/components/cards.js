@@ -1,14 +1,17 @@
 import React from 'react'
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 
 const Cards = () => {
-  const { heading:{ cardHeading }, cards } = useStaticQuery(getCards)
+  const { 
+    heading: { cardHeading }, 
+    cards
+  } = useStaticQuery(getCards)
 
   return (
-    <CardsWrapper id="courses">
+    <CardsWrapper id='courses'>
       <CardTitle>{cardHeading}</CardTitle>
 
       <CardGroup>

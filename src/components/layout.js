@@ -1,13 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 import { GlobalStyle } from '../utils/globalStyles'
 
-import Header from "./header"
-import Footer from "./footer"
+import Header from './header'
+import Footer from './footer'
 
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
   // eslint-disable-next-line global-require
-  require("smooth-scroll")('a[href*="#"]')
+  require('smooth-scroll')('a[href*="#"]')
 }
 
 const Layout = ({ children }) => (

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 import styled, { keyframes } from 'styled-components'
 import { FaArrowDown } from 'react-icons/fa'
 
@@ -7,7 +7,7 @@ import { FaArrowDown } from 'react-icons/fa'
 const ArrowDown = () => {
   return (
     <ArrowDownContainer className='bounce'>
-      <Link to="/#courses">
+      <Link to='/#courses'>
         <FaArrowDown />
       </Link>
     </ArrowDownContainer>

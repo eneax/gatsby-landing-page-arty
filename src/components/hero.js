@@ -3,9 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled, { keyframes } from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
-import Logos from "../components/logos";
-import ArrowDown from "../components/arrowDown";
-import Wave from "../components/wave"
+import Logos from '../components/logos';
+import ArrowDown from '../components/arrowDown';
+import Wave from '../components/wave'
 
 
 const Hero = ({ className }) => {
