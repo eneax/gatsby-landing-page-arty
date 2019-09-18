@@ -1,45 +1,29 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
+import useAnimateOnScrolled from '../utils/animateOnScrolled';
 
 
-class Header extends React.Component {
-  state = {
-    hasScrolled: false,
-  }
+const Header = () => {
+  const hasScrolled = useAnimateOnScrolled();
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
+  return (
+    <HeaderWrapper hasScrolled={hasScrolled}>
+      <HeaderGroup>
+        <Link to='/#top'>
+          <img
+            src={require('../images/logo-designcode.svg')}
+            width='30'
+            alt=''
+          />
+        </Link>
 
-  handleScroll = () => {
-    // get the data of where the user has scrolled
-    const scrollTop = window.pageYOffset
-
-    scrollTop > 50
-    ? this.setState({ hasScrolled: true })
-    : this.setState({ hasScrolled: false })
-  }
-
-  render() {
-    return (
-      <HeaderWrapper hasScrolled={this.state.hasScrolled}>
-        <HeaderGroup>
-          <Link to="/#top">
-            <img
-              src={require("../images/logo-designcode.svg")}
-              width="30"
-              alt=""
-            />
-          </Link>
-
-          <Link to="/#courses">Courses</Link>
-          <Link to="/#react">React for Designers</Link>
-          <Link to="/#download">Download</Link>
-        </HeaderGroup>
-      </HeaderWrapper>
-    )
-  }
+        <Link to='/#courses'>Courses</Link>
+        <Link to='/#react'>React for Designers</Link>
+        <Link to='/#download'>Download</Link>
+      </HeaderGroup>
+    </HeaderWrapper>
+  )
 }
 
 export default Header
