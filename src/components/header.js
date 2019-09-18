@@ -1,26 +1,36 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
-import useAnimateOnScrolled from '../utils/animateOnScrolled';
+import useAnimateOnScrolled from '../utils/animateOnScrolled'
 
 
 const Header = () => {
-  const hasScrolled = useAnimateOnScrolled();
+  const hasScrolled = useAnimateOnScrolled()
+
+  const {
+    navbarLogo: {logoUrl, logo},
+    navbarLinks
+  } = useStaticQuery(getNavbar)
 
   return (
     <HeaderWrapper hasScrolled={hasScrolled}>
       <HeaderGroup>
-        <Link to='/#top'>
-          <img
-            src={require('../images/logo-designcode.svg')}
-            width='30'
-            alt=''
+        <Link to={logoUrl}>
+          <Img
+            fixed={logo.fixed}
+            alt='main logo'
           />
         </Link>
 
-        <Link to='/#courses'>Courses</Link>
-        <Link to='/#react'>React for Designers</Link>
-        <Link to='/#download'>Download</Link>
+        {navbarLinks.edges.map(({ node }) => (
+          <Link 
+            key={node.id}
+            to={node.navbarItemUrl}
+          >
+            {node.navbarItemText}
+          </Link>
+        ))}
       </HeaderGroup>
     </HeaderWrapper>
   )
@@ -28,6 +38,29 @@ const Header = () => {
 
 export default Header
 
+
+// query
+const getNavbar = graphql`
+  {
+    navbarLogo: contentfulNavbarLogo {
+      logoUrl
+      logo {
+        fixed {
+          ...GatsbyContentfulFixed_tracedSVG
+        }
+      }
+    }
+    navbarLinks: allContentfulNavbarLinks(sort: {fields: createdAt}) {
+      edges {
+        node {
+          id: contentful_id
+          navbarItemUrl
+          navbarItemText
+        }
+      }
+    }
+  }
+`
 
 // styles
 const HeaderWrapper = styled.header`
@@ -42,7 +75,6 @@ const HeaderWrapper = styled.header`
     padding: 15px 0;
     backdrop-filter: blur(20px);
   `}
-  
 
   @media (max-width: 640px) {
     padding: 15px 0;
@@ -87,9 +119,14 @@ const HeaderWrapper = styled.header`
 const HeaderGroup = styled.div`
   max-width: 800px;
   margin: 0 auto;
-  display: grid;  /* by default everything is display column */
+  display: grid;
   grid-template-columns: repeat(4, auto);
-  align-items: center;  /* vertically */
-  justify-items: center;  /* horizontally */
+  align-items: center;
+  justify-items: center;
   grid-gap: 10px;
+
+  .gatsby-image-wrapper {
+    width: 30px !important;
+    height: 30px !important;
+  }
 `
