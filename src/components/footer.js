@@ -11,7 +11,7 @@ const Footer = () => {
   } = useStaticQuery(getLink)
 
   return (
-    <FooterGroup>
+    <FooterGroup id='download'>
       <React.Fragment key={downloadButton}>
         <Text>{text}</Text>
         <DownloadBtn 
