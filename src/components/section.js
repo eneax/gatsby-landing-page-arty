@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 import Img from 'gatsby-image'
 import Wave from '../components/wave'
-
+import FadeInSection from '../utils/fadeInSection'
 
 
 const Section = ({ className }) => {
@@ -27,8 +27,13 @@ const Section = ({ className }) => {
       />
 
       <SectionGroup>
-        <SectionTitle>{title}</SectionTitle>
-        <SectionDescription>{description}</SectionDescription>
+        <FadeInSection>
+          <SectionTitle>{title}</SectionTitle>
+        </FadeInSection>
+
+        <FadeInSection>
+          <SectionDescription>{description}</SectionDescription>
+        </FadeInSection>
       </SectionGroup>
     </BackgroundImage>
   )
