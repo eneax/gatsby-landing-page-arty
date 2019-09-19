@@ -46,7 +46,7 @@ const getNavbar = graphql`
       logoUrl
       logo {
         fixed {
-          ...GatsbyContentfulFixed_tracedSVG
+          ...GatsbyContentfulFixed
         }
       }
     }
