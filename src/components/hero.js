@@ -120,7 +120,7 @@ const HeroGroup = styled.div`
     color: white;
     text-transform: uppercase;
     background: rgba(0, 0, 0, .7);
-    padding: 9px 20px;
+    padding: 15px 10px;
     border: 1px solid rgba(255, 255, 255, .25);
     border-radius: 20px;
     transition: 0.8s cubic-bezier(0.2, 0.82, 0.2, 1);
