@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import FadeInSection from '../utils/fadeInSection'
 
 
 const Cells = () => {
@@ -12,19 +13,24 @@ const Cells = () => {
 
   return (
     <>
-    <CellsHeading>{cellHeading}</CellsHeading>
-    <CellGroupWrapper>
-      {
-        cells.edges.map(({ node }) => (
-          <CellGroup key={node.id}>
-            <CellImage>
-              <Img fixed={node.image.fixed} />
-            </CellImage>
-            <CellTitle>{node.title}</CellTitle>
-          </CellGroup>
-        ))
-      }
-    </CellGroupWrapper>
+      <FadeInSection>
+        <CellsHeading>{cellHeading}</CellsHeading>
+      </FadeInSection>
+
+      <CellGroupWrapper>
+        {
+          cells.edges.map(({ node }) => (
+            <FadeInSection key={node.id}>
+              <CellGroup>
+                <CellImage>
+                  <Img fixed={node.image.fixed} />
+                </CellImage>
+                <CellTitle>{node.title}</CellTitle>
+              </CellGroup>
+            </FadeInSection>
+          ))
+        }
+      </CellGroupWrapper>
     </>
   )
 }
