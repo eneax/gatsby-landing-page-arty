@@ -71,7 +71,7 @@ const NavbarWrapper = styled.header`
   transition: .8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   ${({ hasScrolled }) => hasScrolled && `
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     padding: 15px 0;
     backdrop-filter: blur(20px);
   `}
