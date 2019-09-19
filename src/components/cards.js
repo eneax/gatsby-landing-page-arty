@@ -11,7 +11,7 @@ const Cards = () => {
   } = useStaticQuery(getCards)
 
   return (
-    <CardsWrapper id='courses'>
+    <CardsWrapper id='first'>
       <CardTitle>{cardHeading}</CardTitle>
 
       <CardGroup>

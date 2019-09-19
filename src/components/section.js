@@ -14,7 +14,7 @@ const Section = ({ className }) => {
 
   return (
     <BackgroundImage 
-      id='react'
+      id='second'
       className={className}
       fluid={backgroundImage.fluid}
     >

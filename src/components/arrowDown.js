@@ -7,7 +7,7 @@ import { FaArrowDown } from 'react-icons/fa'
 const ArrowDown = () => {
   return (
     <ArrowDownContainer className='bounce'>
-      <Link to='/#courses'>
+      <Link to='/#first'>
         <FaArrowDown />
       </Link>
     </ArrowDownContainer>
