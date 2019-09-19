@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import FadeInSection from '../utils/fadeInSection'
 
 
 const Cards = () => {
@@ -12,18 +13,22 @@ const Cards = () => {
 
   return (
     <CardsWrapper id='first'>
-      <CardTitle>{cardHeading}</CardTitle>
+      <FadeInSection>
+        <CardTitle>{cardHeading}</CardTitle>
+      </FadeInSection>
 
       <CardGroup>
         {cards.edges.map(({ node }) => (
-          <CardWrapper key={node.id}>
-            <Img
-              fixed={node.image.fixed}
-              alt={`${node.title} card`}
-            />
-            <h3>{node.title}</h3>
-            <p>{node.text}</p>
-          </CardWrapper>
+          <FadeInSection key={node.id}>
+            <CardWrapper>
+              <Img
+                fixed={node.image.fixed}
+                alt={`${node.title} card`}
+              />
+              <h3>{node.title}</h3>
+              <p>{node.text}</p>
+            </CardWrapper>
+          </FadeInSection>
         ))}
       </CardGroup>
     </CardsWrapper>
