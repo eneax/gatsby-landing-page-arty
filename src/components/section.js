@@ -81,7 +81,7 @@ const SectionGroup = styled.div`
   grid-template-columns: 1fr 1fr;
   margin: 0 auto;
   grid-gap: 20px;
-  grid-template-rows: auto 100%;
+  grid-template-rows: auto 1fr;
   
   @media (max-width: 720px) {
     grid-template-columns: 1fr;
