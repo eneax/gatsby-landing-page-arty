@@ -65,6 +65,7 @@ const getCards = graphql`
 // styles
 const CardsWrapper = styled.div`
   padding-top: 25px;
+  padding-bottom: 40px;
 `
 
 const CardTitle = styled.h2`
