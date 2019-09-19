@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { GlobalStyle } from '../utils/globalStyles'
 
-import Header from './header'
+import Navbar from './navbar'
 import Footer from './footer'
 
 if (typeof window !== 'undefined') {
@@ -13,7 +13,7 @@ if (typeof window !== 'undefined') {
 const Layout = ({ children }) => (
   <>
     <GlobalStyle />
-    <Header />
+    <Navbar />
     {children}
     <Footer />
   </>

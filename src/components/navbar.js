@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import useAnimateOnScrolled from '../utils/animateOnScrolled'
 
 
-const Header = () => {
+const Navbar = () => {
   const hasScrolled = useAnimateOnScrolled()
 
   const {
@@ -14,8 +14,8 @@ const Header = () => {
   } = useStaticQuery(getNavbar)
 
   return (
-    <HeaderWrapper hasScrolled={hasScrolled}>
-      <HeaderGroup>
+    <NavbarWrapper hasScrolled={hasScrolled}>
+      <NavbarGroup>
         <Link to={logoUrl}>
           <Img
             fixed={logo.fixed}
@@ -31,12 +31,12 @@ const Header = () => {
             {node.navbarItemText}
           </Link>
         ))}
-      </HeaderGroup>
-    </HeaderWrapper>
+      </NavbarGroup>
+    </NavbarWrapper>
   )
 }
 
-export default Header
+export default Navbar
 
 
 // query
@@ -63,7 +63,7 @@ const getNavbar = graphql`
 `
 
 // styles
-const HeaderWrapper = styled.header`
+const NavbarWrapper = styled.header`
   position: fixed;
   width: 100%;
   padding: 50px 0;
@@ -116,7 +116,7 @@ const HeaderWrapper = styled.header`
   }
 `
 
-const HeaderGroup = styled.div`
+const NavbarGroup = styled.div`
   max-width: 800px;
   margin: 0 auto;
   display: grid;
