@@ -26,7 +26,7 @@ const Footer = () => {
       <LinkGroup>
         {
           links.edges.map(({ node }) => (
-            <a key={node.url} href={node.url}>
+            <a key={node.url} href={node.url} target='_blank' rel='noopener noreferrer'>
               {node.title}
             </a>
           ))
@@ -60,7 +60,6 @@ const getLink = graphql`
         node {
           url
           title
-          createdAt
         }
       }
     }
