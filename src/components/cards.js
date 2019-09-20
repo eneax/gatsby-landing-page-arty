@@ -85,7 +85,7 @@ const CardTitle = styled.h2`
   }
   @media (max-width: 320px) {
     font-size: 40px;
-    margin-top: 35px;
+    margin-top: 55px;
   }
 `
 
