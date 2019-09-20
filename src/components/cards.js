@@ -80,6 +80,13 @@ const CardTitle = styled.h2`
   @media (max-width: 640px) {
     margin-top: 65px;
   }
+  @media (max-width: 400px) {
+    font-size: 50px;
+  }
+  @media (max-width: 320px) {
+    font-size: 40px;
+    margin-top: 35px;
+  }
 `
 
 const CardGroup = styled.div`
