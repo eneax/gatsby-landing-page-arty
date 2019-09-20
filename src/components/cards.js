@@ -119,6 +119,10 @@ const CardWrapper = styled.div`
   grid-template-rows: 1fr 1fr;  /* divide in two equal rows */
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
+  @media (max-width: 320px) {
+    width: 275px;
+  }
+
   /* Card hover effect */
   &:hover {
     transform: scale(1.1, 1.1);
