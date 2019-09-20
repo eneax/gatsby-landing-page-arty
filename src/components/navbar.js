@@ -97,6 +97,9 @@ const NavbarWrapper = styled.header`
       font-size: 15px;
       padding: 8px 10px;
     }
+    @media (max-width: 320px) {
+      font-size: 13px;
+    }
 
     &:last-child {
       background: #56ccf2;
