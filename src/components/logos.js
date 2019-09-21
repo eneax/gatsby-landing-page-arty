@@ -46,13 +46,13 @@ const getLogos = graphql`
 // styles
 const LogosWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
   margin: 75px 0;
   justify-items: center;
 
   @media (max-width: 640px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Blur on Hover */
