@@ -88,8 +88,8 @@ const Text = styled.p`
 `
 
 const DownloadBtn = styled.a`
-  background: linear-gradient(102.24deg, #9b51e0 0%, #3436e7 100%);
-  box-shadow: 0px 10px 20px rgba(101, 41, 255, 0.15);
+  background: linear-gradient(102.24deg, #663399 0%, #310692 100%);
+  box-shadow: 0px 10px 20px rgba(49, 6, 146, 0.15);
   border-radius: 30px;
   color: white;
   border: none;
