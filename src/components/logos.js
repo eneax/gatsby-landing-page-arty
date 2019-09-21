@@ -27,7 +27,7 @@ export default Logos
 // query
 const getLogos = graphql`
   {
-    logos: allContentfulLogos(sort: {fields: title, order: ASC}) {
+    logos: allContentfulLogos(sort: {fields: createdAt, order: ASC}) {
       edges {
         node {
           id: contentful_id
