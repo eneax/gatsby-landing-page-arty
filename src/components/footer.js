@@ -81,7 +81,7 @@ const FooterGroup = styled.div`
 const Text = styled.p`
   font-size: 22px;
   font-weight: 600;
-  color: #486791;
+  color: #485391;
   max-width: 500px;
   margin: 0 auto;
   padding: 0 20px;
@@ -125,7 +125,7 @@ const LinkGroup = styled.div`
 `
 
 const Copyright = styled.div`
-  color: #486791;
+  color: #485391;
   max-width: 500px;
   margin: 0 auto;
   padding: 0 20px;
