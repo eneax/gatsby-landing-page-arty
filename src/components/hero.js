@@ -64,6 +64,8 @@ export default styled(Hero)`
   background-size: cover;
   background-position: center;
   position: relative;
+  background-color: rgba(0,0,0, 0.5) !important;
+  opacity: 1 !important;
 `
 
 const HeroGroup = styled.div`
