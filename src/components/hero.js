@@ -71,7 +71,7 @@ export default styled(Hero)`
 const HeroGroup = styled.div`
   max-width: 500px;
   margin: 0 auto;
-  padding: 150px 50px;
+  padding: 180px 50px 150px;
   text-align: center;
 
   @media (max-width: 640px) {
