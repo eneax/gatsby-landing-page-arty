@@ -73,7 +73,7 @@ const getLink = graphql`
 
 // styles
 const FooterGroup = styled.div`
-  background: #f1f3f5;
+  background: #F2F5F7;
   padding: 50px 0;
   display: grid;
   grid-gap: 20px;
