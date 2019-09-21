@@ -96,6 +96,14 @@ const CellImage = styled.div`
   height: 60px;
   background: black;
   border-radius: 10px;
+
+  .gatsby-image-wrapper {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+  }
 `
 
 const CellTitle = styled.div`
