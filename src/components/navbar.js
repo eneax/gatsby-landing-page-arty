@@ -102,7 +102,7 @@ const NavbarWrapper = styled.header`
     }
 
     &:last-child {
-      background: #56ccf2;
+      background: #39B6D5;
 
       @media (max-width: 640px) {
         margin-right: 10px;
