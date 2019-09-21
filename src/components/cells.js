@@ -67,7 +67,7 @@ const CellsHeading = styled.p`
   font-weight: 600;
   font-size: 18px;
   text-transform: uppercase;
-  color: #94a4ba;
+  color: #8C8CBA;
   text-align: center;
 `
 
