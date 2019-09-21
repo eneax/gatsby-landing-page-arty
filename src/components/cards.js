@@ -73,7 +73,7 @@ const CardTitle = styled.h2`
   font-size: 60px;
   text-align: center;
   font-weight: 700;
-  background: linear-gradient(104deg, #050a27 0%, #4a548c 100%);
+  background: linear-gradient(104deg, #050a27 0%, #663399 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
