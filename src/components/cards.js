@@ -116,11 +116,21 @@ const CardWrapper = styled.div`
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   display: grid;
-  grid-template-rows: 1fr 1fr;  /* divide in two equal rows */
+  grid-template-rows: 1fr 1fr;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   @media (max-width: 320px) {
     width: 275px;
+  }
+
+  &:before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
   }
 
   /* Card hover effect */
@@ -146,14 +156,16 @@ const CardWrapper = styled.div`
     font-size: 30px;
     margin: 20px 0 0 20px;
     width: 190px;
+    z-index: 1;
   }
 
   p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 600;
     align-self: end;
     margin: 0 0 20px 20px;
+    z-index: 1;
   }
 `
