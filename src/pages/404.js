@@ -1,22 +1,27 @@
 import React from 'react'
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 
 const NotFoundPage = () => {
   const { 
-    notFound: { title, subtitle } 
+    notFound: { image, title, subtitle } 
   } = useStaticQuery(getNotFound)
   
   return (
     <Layout>
-      <SEO title="404: Not found" />
+      <SEO title='404: Not found' />
 
       <ContentWrapper>
         <ContentGroup>
+          <Img 
+            fluid={image.fluid}
+            alt={title}
+          />
           <h1>{title}</h1>
           <p>{subtitle}</p>
         </ContentGroup>
@@ -33,10 +38,16 @@ export default NotFoundPage
 const getNotFound = graphql`
   {
     notFound: contentfulNotFoundPage {
+      image {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
       title
       subtitle
     }
   }
+
 `
 
 // styles
