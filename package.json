@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-landing-page",
+  "name": "gatsby-landing-page-arty",
   "private": true,
   "description": "A simple landing page built with Gatsby, CSS Grid and styled-components",
-  "version": "0.1.0",
-  "author": "Enea Xharja <enea.xharja@icloud.com>",
+  "version": "1.0.0",
+  "author": "Enea Xharja <eneaxharja@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "dotenv": "^8.0.0",
@@ -39,14 +39,10 @@
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "serve": "gatsby serve"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/eneax/gatsby-landing-page-arty"
   }
 }
